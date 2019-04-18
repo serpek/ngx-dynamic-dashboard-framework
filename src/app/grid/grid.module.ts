@@ -1,40 +1,38 @@
 import {NgModule, ANALYZE_FOR_ENTRY_COMPONENTS} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {} from 'ng2-dnd';
+import {HttpClientModule} from '@angular/common/http';
+import {GridsterModule} from 'angular-gridster2';
+import {MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
 
 import {GridComponent} from './grid.component';
 import {CellComponent} from './cell.component';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
-import {AddGadgetService} from '../add-gadget/service';
-import {DndModule} from 'ng2-dnd';
-import {NewsService} from '../gadgets/news/service';
-import {JobAnalysisService} from '../gadgets/job-analysis/service';
-import {TrendService} from '../gadgets/trend/service';
-import {TrendLineService} from '../gadgets/trend-line/service';
-import {EdgeService} from '../gadgets/edge-service-list/service';
-import {CPUService} from '../gadgets/cpu/service';
-import {HttpClientModule} from '@angular/common/http';
-import {DonutService} from '../gadgets/donut/service';
-import {TodoService} from '../gadgets/todo/service';
-import {ToastModule} from '../toast/toast.module';
-import {BubbleService} from '../gadgets/bubble/service';
-import {BarChartService} from '../gadgets/barchart/service';
-import {PieChartService} from '../gadgets/piechart/service';
-import {GridsterModule} from 'angular-gridster2';
-import {MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
+import {SharedModule} from '@app/shared';
+import {NewsService} from '@app/gadgets/news/service';
+import {DonutService} from '@app/gadgets/donut/service';
+import {PieChartService} from '@app/gadgets/piechart/service';
+import {JobAnalysisService} from '@app/gadgets/job-analysis/service';
+import {TodoService} from '@app/gadgets/todo/service';
+import {CPUService} from '@app/gadgets/cpu/service';
+import {BarChartService} from '@app/gadgets/barchart/service';
+import {TrendLineService} from '@app/gadgets/trend-line/service';
+import {EdgeService} from '@app/gadgets/edge-service-list/service';
+import {BubbleService} from '@app/gadgets/bubble/service';
+import {TrendService} from '@app/gadgets/trend/service';
 
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        SharedModule,
         MatIconModule,
         MatCheckboxModule,
         MatButtonModule,
-        ToastModule,
         HttpClientModule,
-        DndModule.forRoot(),
         GridsterModule
     ],
     declarations: [
@@ -47,7 +45,6 @@ import {MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/materi
     providers: [
         GadgetInstanceService,
         ConfigurationService,
-        AddGadgetService,
         NewsService,
         JobAnalysisService,
         TrendLineService,

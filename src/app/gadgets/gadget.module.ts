@@ -1,5 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+
+import {
+    MatButtonModule, MatCheckboxModule, MatExpansionModule, MatIconModule, MatInputModule, MatOptionModule,
+    MatProgressBarModule, MatSelectModule
+} from '@angular/material';
+
+
 import {CPUGadgetComponent} from './cpu/cpu-gadget.component';
 import {CPUMGadgetComponent} from './cpum/cpum-gadget.component';
 import {DiskGadgetComponent} from './disk/disk-gadget.component';
@@ -17,39 +24,30 @@ import {StatisticService} from './statistic/service';
 import {DiskService} from './disk/service';
 import {TrendService} from './trend/service';
 import {PropertyListGadgetComponent} from './property-list/property-list-gadget.component';
-import {DynamicFormModule} from '../dynamic-form/dynamic-form-module';
 import {ServiceListGadgetComponent} from './service-list/service-list-gadget.component';
-import {DndModule} from 'ng2-dnd';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {GadgetSharedModule} from './_common/gadget-shared.module';
 import {ErrorHandlerModule} from '../error/error.module';
-import {
-    MatButtonModule, MatCheckboxModule, MatExpansionModule, MatIconModule, MatInputModule, MatOptionModule,
-    MatProgressBarModule, MatSelectModule
-} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {StorageObjectListComponent} from './storage-object-list/storage-object-list.component';
 import {StorageService} from './storage-object-list/service';
-import {DataListModule} from '../datalist/data-list.module';
 import {DonutGadgetComponent} from './donut/donut-gadget.component';
 import {DonutService} from './donut/service';
-import {APITokenService} from '../api-token/api-token.service';
 import {DrillDownComponent} from './donut/drill-down-component';
-import {FacetModule} from '../facet/facet.module';
-import {TypeAheadInputModule} from '../typeahead-input/typeahead-input.module';
 import {TodoService} from './todo/service';
 import {BubbleGadgetComponent} from './bubble/bubble-gadget.component';
 import {BarChartGadgetComponent} from './barchart/barchart-gadget.component';
 import {BarChartService} from './barchart/service';
 import {PieChartGadgetComponent} from './piechart/piechart-gadget.component';
-import {PieChartService} from './piechart/service';  // todo gadget
+import {PieChartService} from './piechart/service';
+import {SharedModule} from '@app/shared';
+import {APITokenService} from '@app/services/api-token.service';  // todo gadget
 
 @NgModule({
     imports: [
         CommonModule,
+        SharedModule,
         GadgetSharedModule,
-        DndModule.forRoot(),
-        DynamicFormModule,
         ErrorHandlerModule,
         NgxChartsModule,
         MatButtonModule,
@@ -60,10 +58,7 @@ import {PieChartService} from './piechart/service';  // todo gadget
         MatExpansionModule,
         MatOptionModule,
         MatSelectModule,
-        FormsModule,
-        FacetModule,
-        TypeAheadInputModule,
-        DataListModule
+        FormsModule
     ],
     declarations: [
         TodoGadgetComponent,  // todo gadget

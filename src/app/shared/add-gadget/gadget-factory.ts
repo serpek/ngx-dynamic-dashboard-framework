@@ -1,21 +1,16 @@
-import {CPUGadgetComponent} from '../gadgets/cpu/cpu-gadget.component';
-import {MemoryGadgetComponent} from '../gadgets/memory/memory-gadget.component';
-import {PropertyListGadgetComponent} from '../gadgets/property-list/property-list-gadget.component';
-import {DiskGadgetComponent} from '../gadgets/disk/disk-gadget.component';
-import {ServiceListGadgetComponent} from '../gadgets/service-list/service-list-gadget.component';
-import {StatisticGadgetComponent} from '../gadgets/statistic/statistic-gadget.component';
-import {TrendGadgetComponent} from '../gadgets/trend/trend-gadget.component';
-import {NewsGadgetComponent} from '../gadgets/news/news-gadget.component';
-import {JobAnalysisGadgetComponent} from '../gadgets/job-analysis/job-analysis-gadget.component';
-import {TrendLineGadgetComponent} from '../gadgets/trend-line/trend-line-gadget.component';
-import {EdgeServiceListGadgetComponent} from '../gadgets/edge-service-list/edge-service-list-gadget.component';
-import {CPUMGadgetComponent} from '../gadgets/cpum/cpum-gadget.component';
-import {StorageObjectListComponent} from '../gadgets/storage-object-list/storage-object-list.component';
-import {DonutGadgetComponent} from '../gadgets/donut/donut-gadget.component';
-import {TodoGadgetComponent} from '../gadgets/todo/todo-gadget.component';
-import {BubbleGadgetComponent} from '../gadgets/bubble/bubble-gadget.component';
-import {BarChartGadgetComponent} from '../gadgets/barchart/barchart-gadget.component';
-import {PieChartGadgetComponent} from '../gadgets/piechart/piechart-gadget.component';
+import {
+    BarChartGadgetComponent,
+    BubbleGadgetComponent,
+    CPUGadgetComponent,
+    CPUMGadgetComponent,
+    DiskGadgetComponent,
+    DonutGadgetComponent, EdgeServiceListGadgetComponent,
+    JobAnalysisGadgetComponent,
+    MemoryGadgetComponent, NewsGadgetComponent,
+    PieChartGadgetComponent,
+    PropertyListGadgetComponent, ServiceListGadgetComponent, StatisticGadgetComponent, StorageObjectListComponent, TodoGadgetComponent, TrendGadgetComponent,
+    TrendLineGadgetComponent
+} from '@app/gadgets';
 
 export class GadgetFactory {
     /**

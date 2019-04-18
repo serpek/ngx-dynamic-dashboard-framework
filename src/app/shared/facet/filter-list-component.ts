@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {AddGadgetService} from '../add-gadget/service';
-import {Facet, Tag} from './facet-model';
+import {Facet} from './facet-model';
 
 @Component({
     moduleId: module.id,
@@ -8,9 +7,7 @@ import {Facet, Tag} from './facet-model';
     template: `
         <br>
         <div *ngFor='let facet of facet_tags ;let i = index'>
-
             <app-facet [facet]='facet' (tagSelectEvent)='tagSelect($event)' [openFacet]='i < 2'></app-facet>
-
         </div>
     `,
     styleUrls: ['./styles.css']

@@ -4,7 +4,6 @@ import {EndpointConfigurationTabComponent} from './tab-endpoint/endpoint-configu
 import {EndPointDetailComponent} from './tab-endpoint/endpointDetail.component';
 import {EndPointService} from './tab-endpoint/endpoint.service';
 import {BoardsConfigurationTabComponent} from './tab-boards/boards-configuration-tab.component';
-import {DndModule} from 'ng2-dnd';
 import {
     MatButtonModule,
     MatCheckboxModule,
@@ -24,7 +23,6 @@ import {OptionsService} from './tab-options/service';
 @NgModule({
     imports: [
         CommonModule,
-        DndModule.forRoot(),
         MatButtonModule,
         MatIconModule,
         MatCheckboxModule,

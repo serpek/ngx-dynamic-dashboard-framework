@@ -5,8 +5,8 @@ import {GadgetPropertyService} from './gadget-property.service';
 import {RuntimeService} from '../../services/runtime.service';
 import {GadgetInstanceService} from '../../grid/grid.service';
 import {AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {DynamicFormComponent} from '../../dynamic-form/dynamic-form.component';
 import {OptionsService} from '../../configuration/tab-options/service';
+import {DynamicFormComponent} from '@app/shared/dynamic-form/dynamic-form.component';
 
 export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterViewInit {
     @ViewChild(DynamicFormComponent) propertyPageForm: DynamicFormComponent;

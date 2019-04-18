@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {PropertyBase} from './property-base';
-import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
 import {
     style, trigger, animate, transition
 } from '@angular/animations';
+import {EndPointService} from '@app/configuration/tab-endpoint/endpoint.service';
 
 @Component({
     moduleId: module.id,

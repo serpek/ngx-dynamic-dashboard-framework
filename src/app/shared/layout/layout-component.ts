@@ -1,6 +1,3 @@
-/**
- * Created by jayhamilton on 1/24/17.
- */
 import {
     AfterViewInit, Component, Output, EventEmitter, Input
 } from '@angular/core';
@@ -26,14 +23,11 @@ import {boardLayouts} from './model';
 
 })
 export class BoardLayoutManagerComponent implements AfterViewInit {
-
     @Input() layoutId: any;
     @Output() boardLayoutChangeEvent: EventEmitter<any> = new EventEmitter();
 
     boardLayouts: any[];
-
     modalHeader = 'Layout';
-
     messageModal: any;
 
     constructor() {

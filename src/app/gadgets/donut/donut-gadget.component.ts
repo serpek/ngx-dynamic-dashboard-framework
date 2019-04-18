@@ -1,20 +1,14 @@
-import {
-    ChangeDetectorRef, Component, OnDestroy
-} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {style, trigger, animate, transition, state} from '@angular/animations';
 
-import {
-    style, trigger, animate, transition, state
-} from '@angular/animations';
-
-import {RuntimeService} from '../../services/runtime.service';
-import {GadgetInstanceService} from '../../grid/grid.service';
-import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service';
-import {GadgetPropertyService} from '../_common/gadget-property.service';
-import {GadgetBase} from '../_common/gadget-base';
-import {DonutService} from './service';
-import {APITokenService} from '../../api-token/api-token.service';
-import {OptionsService} from "../../configuration/tab-options/service";
-
+import {GadgetBase} from '@app/gadgets/_common/gadget-base';
+import {GadgetInstanceService} from '@app/grid/grid.service';
+import {GadgetPropertyService} from '@app/gadgets';
+import {DonutService} from '@app/gadgets/donut/service';
+import {APITokenService} from '@app/services/api-token.service';
+import {OptionsService} from '@app/configuration/tab-options/service';
+import {RuntimeService} from '@app/services/runtime.service';
+import {EndPointService} from '@app/configuration/tab-endpoint/endpoint.service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -48,7 +42,6 @@ import {OptionsService} from "../../configuration/tab-options/service";
     ]
 })
 export class DonutGadgetComponent extends GadgetBase implements OnDestroy {
-
     topic: any;
     data = {};
     colorScheme = {

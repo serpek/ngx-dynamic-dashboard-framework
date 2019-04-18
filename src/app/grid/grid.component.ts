@@ -1,11 +1,11 @@
 import {Component, Output, EventEmitter, OnInit, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
-import {AddGadgetService} from '../add-gadget/service';
-import {ToastService} from '../toast/toast.service';
 import {DisplayGrid, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
 import {MenuEventService} from '@app/shell/menu/menu-service';
 import {GadgetConfigModel} from '@app/gadgets/_common/gadget-config-model';
+import {ToastService} from '@app/shared/toast/toast.service';
+import {AddGadgetService} from '@app/shared/add-gadget/service';
 
 @Component({
     moduleId: module.id,

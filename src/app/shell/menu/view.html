@@ -13,31 +13,25 @@
         </a>
     </div>
     <div class="right inverted menu">
-        <a  *ngIf="env.menu.documentation" class="item"
-                (click)="showDocumentation()">
+        <a *ngIf="env.menu.documentation" class="item" (click)="showDocumentation()">
             <i class="large inverted book icon"></i>
         </a>
-        <a *ngIf="env.menu.notification" class="item"
-                (click)="toggleNotificationSideBar()">
+        <a *ngIf="env.menu.notification" class="item" (click)="toggleNotificationSideBar()">
             <i class="large inverted alarm icon"></i>
             <div class="floating ui red label">
                 <span style="font-size: 1.2em; font-weight: normal">4</span>
             </div>
         </a>
-        <a class="item"
-                (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')">
+        <a class="item" (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')">
             <i class="large inverted plus icon"></i>
         </a>
-        <a class="item"
-                (click)="toggleLayoutSideBar()">
+        <a class="item" (click)="toggleLayoutSideBar()">
             <i class="large inverted grid layout icon"></i>
         </a>
-        <a class="item"
-                (click)="boardConfigModal.showConfigurationModal('Configuration')">
+        <a class="item" (click)="boardConfigModal.showConfigurationModal('Configuration')">
             <i class="large inverted setting icon"></i>
         </a>
-        <a class="item"
-                (click)="toggleAboutSideBar()">
+        <a class="item" (click)="toggleAboutSideBar()">
             <i class="large inverted info icon"></i>
         </a>
         <a class="item" (click)="logout()">

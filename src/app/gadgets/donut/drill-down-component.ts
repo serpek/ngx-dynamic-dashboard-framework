@@ -1,13 +1,7 @@
-import {
-    ViewChild, ElementRef, AfterViewInit, Component
-} from '@angular/core';
-
-import {
-    style, state, trigger, animate, transition
-} from '@angular/animations';
-
-import {Facet, Tag} from '../../facet/facet-model';
+import {    ViewChild, ElementRef, AfterViewInit, Component} from '@angular/core';
+import {    style, state, trigger, animate, transition} from '@angular/animations';
 import {DonutService} from './service';
+import {Facet, Tag} from '@app/shared/facet/facet-model';
 
 declare var jQuery: any;
 /**

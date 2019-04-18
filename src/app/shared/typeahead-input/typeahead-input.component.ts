@@ -1,9 +1,5 @@
 import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
-import {RuntimeService} from '../services/runtime.service';
-
-/**
- * Created by jayhamilton on 2/26/17.
- */
+import {RuntimeService} from '@app/services/runtime.service';
 
 @Component({
     moduleId: module.id,
@@ -28,7 +24,6 @@ export class TypeAheadInputComponent {
 
     constructor(myElement: ElementRef, private _runtimeService: RuntimeService) {
         this.elementRef = myElement;
-
     }
 
     filter() {

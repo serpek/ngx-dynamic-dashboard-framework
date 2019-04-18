@@ -6,9 +6,9 @@ import {GadgetPropertyService} from '../_common/gadget-property.service';
 import {GadgetBase} from '../_common/gadget-base';
 import {StorageService} from './service';
 import {animate, style, transition, trigger} from '@angular/animations';
-import {Facet} from '../../facet/facet-model';
-import {FacetTagProcessor} from '../../facet/facet-tag-processor';
 import {OptionsService} from '../../configuration/tab-options/service';
+import {Facet} from '@app/shared/facet/facet-model';
+import {FacetTagProcessor} from '@app/shared/facet/facet-tag-processor';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -39,8 +39,6 @@ export class StorageObjectListComponent extends GadgetBase {
     placeHolderText = 'Enter volume search string';
     layoutColumnOneWidth = 'four';
     layoutColumnTwoWidth = 'twelve';
-
-
     gadgetHasOperationControls = false;
 
     constructor(protected _runtimeService: RuntimeService,

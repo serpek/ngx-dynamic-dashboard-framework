@@ -1,4 +1,4 @@
-import {PropertyBase} from '../../dynamic-form/property-base';
+import {PropertyBase} from '@app/shared/dynamic-form/property-base';
 
 export class GadgetConfigModel {
     propertyPages: PropertyPage[] = [];

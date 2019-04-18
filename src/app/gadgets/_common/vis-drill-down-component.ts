@@ -1,12 +1,6 @@
-import {
-    ViewChild, ElementRef, AfterViewInit, Component
-} from '@angular/core';
-
-import {
-    style, state, trigger, animate, transition
-} from '@angular/animations';
-
-import {Facet} from '../../facet/facet-model';
+import {    ViewChild, ElementRef, AfterViewInit, Component} from '@angular/core';
+import {    style, state, trigger, animate, transition} from '@angular/animations';
+import {Facet} from '@app/shared/facet/facet-model';
 
 declare var jQuery: any;
 

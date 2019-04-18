@@ -1,17 +1,8 @@
-/**
- * Created by jayhamilton on 1/24/17.
- */
-import {
-    ViewChild, ElementRef, AfterViewInit, Component, Output, EventEmitter
-} from '@angular/core';
-
-import {
-    style, trigger, animate, transition
-} from '@angular/animations';
-
+import {ViewChild, ElementRef, AfterViewInit, Component, Output, EventEmitter} from '@angular/core';
+import {style, trigger, animate, transition} from '@angular/animations';
 import {AddGadgetService} from './service';
-import {Facet} from '../facet/facet-model';
-import {FacetTagProcessor} from '../facet/facet-tag-processor';
+import {Facet} from '@app/shared/facet/facet-model';
+import {FacetTagProcessor} from '@app/shared/facet/facet-tag-processor';
 
 declare var jQuery: any;
 
@@ -43,10 +34,8 @@ declare var jQuery: any;
                 ])
             ])
     ]
-
 })
 export class AddGadgetComponent implements AfterViewInit {
-
     @Output() addGadgetEvent: EventEmitter<any> = new EventEmitter();
 
     gadgetObjectList: any[] = [];
@@ -54,7 +43,7 @@ export class AddGadgetComponent implements AfterViewInit {
     placeHolderText = 'Begin typing gadget name';
     layoutColumnOneWidth = 'six';
     layoutColumnTwoWidth = 'ten';
-    listHeader= 'Gadgets';
+    listHeader = 'Gadgets';
     facetTags: Array<Facet>;
 
     color = 'white';
@@ -70,27 +59,22 @@ export class AddGadgetComponent implements AfterViewInit {
     messageModal: any;
 
     constructor(private _addGadgetService: AddGadgetService) {
-
         this.getObjectList();
     }
 
     actionHandler(actionItem: any, actionName: any) {
         this.addGadgetEvent.emit(actionItem);
         this.hideMessageModal();
-
     }
-
 
     showMessageModal(icon: string, header: string, message: string) {
         this.modalicon = icon;
         this.modalheader = header;
         this.modalmessage = message;
         this.messageModal.modal('show');
-
     }
 
     showComponentLibraryModal(header: string) {
-
         this.modalheader = header;
         this.messageModal.modal('show');
     }
@@ -107,18 +91,15 @@ export class AddGadgetComponent implements AfterViewInit {
     }
 
     getObjectList() {
-
         this._addGadgetService.getGadgetLibrary().subscribe(data => {
             this.gadgetObjectList.length = 0;
             const me = this;
-            data.library.forEach(function (item) {
-
-                    me.gadgetObjectList.push(item);
-                    me.gadgetObjectTitleList.push(item.name);
+            data.library.forEach((item: any) => {
+                me.gadgetObjectList.push(item);
+                me.gadgetObjectTitleList.push(item.name);
             });
             const facetTagProcess = new FacetTagProcessor(this.gadgetObjectList);
             this.facetTags = facetTagProcess.getFacetTags();
         });
-
     }
 }

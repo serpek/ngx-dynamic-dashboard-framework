@@ -10,9 +10,8 @@ import {
 import {FormGroup} from '@angular/forms';
 
 import {PropertyControlService} from './property-control.service';
-import {ConfigurationService} from '../services/configuration.service';
-import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
-import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
+import {EndPoint} from '@app/configuration/tab-endpoint/endpoint.model';
+import {ConfigurationService} from '@app/services/configuration.service';
 
 @Component({
     /* solves error: Expression has changed after it was checked exception resolution - https://www.youtube.com/watch?v=K_BRcal-JfI*/

@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {DropdownProperty} from '../../dynamic-form/property-dropdown';
-import {PropertyBase} from '../../dynamic-form/property-base';
-import {TextboxProperty} from '../../dynamic-form/property-textbox';
-import {HiddenProperty} from '../../dynamic-form/property-hidden';
-import {CheckboxProperty} from '../../dynamic-form/property-checkbox';
-import {DynamicDropdownProperty} from '../../dynamic-form/property-dynamicdropdown';
-import {NumberProperty} from '../../dynamic-form/property-number';
+import {PropertyBase} from '@app/shared/dynamic-form/property-base';
+import {DropdownProperty} from '@app/shared/dynamic-form/property-dropdown';
+import {TextboxProperty} from '@app/shared/dynamic-form/property-textbox';
+import {CheckboxProperty} from '@app/shared/dynamic-form/property-checkbox';
+import {HiddenProperty} from '@app/shared/dynamic-form/property-hidden';
+import {NumberProperty} from '@app/shared/dynamic-form/property-number';
+import {DynamicDropdownProperty} from '@app/shared/dynamic-form/property-dynamicdropdown';
 
 @Injectable()
 export class GadgetPropertyService {
@@ -15,11 +15,8 @@ export class GadgetPropertyService {
 
     setPropertiesAndValues(defaultProperties: any[], properties: PropertyBase<any>[]) {
         let ctrl: PropertyBase<any>;
-
         properties.length = 0;
-
-        defaultProperties.forEach(function (property) {
-
+        defaultProperties.forEach((property: any) => {
             if (property.controlType === 'dropdown') {
                 ctrl = new DropdownProperty(property);
                 properties.push(ctrl);
@@ -38,41 +35,28 @@ export class GadgetPropertyService {
             } else if (property.controlType === 'dynamicdropdown') {
                 ctrl = new DynamicDropdownProperty(property);
                 properties.push(ctrl);
-
             }
         });
-
         properties.sort((a, b) => a.order - b.order);
     }
 
     setPropertyPagesAndProperties(defaultPropertyPages: any[], propertyPages: any[]) {
-
         const me = this;
-
         // for each defaultPropertyPage object, get the properties
-        defaultPropertyPages.forEach(function (propertyPage) {
-
+        defaultPropertyPages.forEach((propertyPage: any) => {
             const newPropertyPage: any = {};
-
             for (const property in propertyPage) {
-
                 if (propertyPage.hasOwnProperty(property)) {
-
                     if (property !== 'properties') {
-
                         newPropertyPage[property] = propertyPage[property];
-
                     } else {
-
                         const properties: PropertyBase<any>[] = [];
                         me.setPropertiesAndValues(propertyPage.properties, properties);
                         newPropertyPage['properties'] = properties;
                     }
                 }
             }
-
             propertyPages.push(newPropertyPage);
-
         });
     }
 }

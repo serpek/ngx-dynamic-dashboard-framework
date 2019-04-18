@@ -17,11 +17,7 @@ import {CoreModule} from '@app/core';
 import {SharedModule} from '@app/shared';
 import {BoardRoutingModule} from '@app/board/board-routing.module';
 import {BoardComponent} from '@app/board/board.component';
-import {DynamicFormModule} from '@app/dynamic-form/dynamic-form-module';
 import {ErrorHandlerModule} from '@app/error/error.module';
-import {FacetModule} from '@app/facet/facet.module';
-import {TypeAheadInputModule} from '@app/typeahead-input/typeahead-input.module';
-import {DataListModule} from '@app/datalist/data-list.module';
 import {EndPointService} from '@app/configuration/tab-endpoint/endpoint.service';
 import {OptionsService} from '@app/configuration/tab-options/service';
 import {RuntimeService} from '@app/services/runtime.service';
@@ -78,7 +74,6 @@ import {MenuEventService} from '@app/shell/menu/menu-service';
             BarChartGadgetComponent,
             PieChartGadgetComponent
         ]),
-        DynamicFormModule,
         ErrorHandlerModule,
         NgxChartsModule,
         MatButtonModule,
@@ -90,9 +85,6 @@ import {MenuEventService} from '@app/shell/menu/menu-service';
         MatOptionModule,
         MatSelectModule,
         FormsModule,
-        FacetModule,
-        TypeAheadInputModule,
-        DataListModule,
         GadgetSharedModule,
         BoardRoutingModule
     ],
