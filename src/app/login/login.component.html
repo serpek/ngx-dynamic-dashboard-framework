@@ -1,0 +1,61 @@
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal image header">
+            <h1 translate>APP_NAME</h1>
+            <div class="content">
+                <p>Log - in to your account</p>
+            </div>
+        </h2>
+        <form class="ui large form" [ngClass]="{'loading': isLoading}" (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="language">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">{{currentLanguage}}</div>
+                        <div class="menu">
+                            <div class="item" data-value="1" *ngFor="let language of languages" (click)="setLanguage(language)">{{language}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input name="email" type="text" formControlName="username" autocomplete="username" [placeholder]="'E-mail address' | translate"/>
+                        <span hidden translate>Username</span>
+                        <small [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched"
+                               class="text-danger" translate>
+                            Username is required
+                        </small>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" class="form-control" formControlName="password" autocomplete="current-password"
+                               [placeholder]="'Password' | translate" required/>
+                        <span hidden translate>Password</span>
+                        <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched"
+                               class="text-danger" translate>
+                            Password is required
+                        </small>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" tabindex="0" class="hidden" formControlName="remember">
+                        <label translate>Remember me</label>
+                    </div>
+                </div>
+                <button class="ui fluid large teal submit button" type="submit" [disabled]="loginForm.invalid || isLoading">
+                    <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+                    <span translate>Login</span>
+                </button>
+            </div>
+
+            <div class="ui error message" [hidden]="!error || isLoading">
+                <p translate>Username or password incorrect.</p>
+            </div>
+        </form>
+    </div>
+</div>

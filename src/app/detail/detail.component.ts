@@ -1,31 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {EndPointService} from "../configuration/tab-endpoint/endpoint.service";
-import {RuntimeService} from "../services/runtime.service";
-import {DetailService} from "./service";
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
+import {DetailService} from './service';
 
-
-/**a
- * Detail component
- *
- */
 @Component({
     moduleId: module.id,
     templateUrl: './view.html',
     styleUrls: ['styles.css']
 })
 export class DetailComponent implements OnInit {
-
     chartType: string;
     chartSeries: string;
     chartMetric: string;
     endPointName: string;
-    data = [];
+    data: any[] = [];
     searchText: string;
     navRoutes: Array<string> = [];
     navigationSubscription: any;
-    objectAsArray = [];
-
+    objectAsArray: any[] = [];
 
     constructor(private _router: Router,
                 private _route: ActivatedRoute,
@@ -54,26 +46,26 @@ export class DetailComponent implements OnInit {
 
         Object.keys(record).forEach(key => {
 
-            if (key.indexOf("link") < 0) {
-                this.objectAsArray.push({"key": key, "value": record[key]});
+            if (key.indexOf('link') < 0) {
+                this.objectAsArray.push({'key': key, 'value': record[key]});
             }
-        })
+        });
     }
 
     getObjectsByHateoasLink(detail: any) {
         this.clearDetailDisplay();
 
-        let href = "";
-        detail.links.forEach(link => {
-            if (link.rel == 'self') {
+        let href = '';
+        detail.links.forEach((link: any) => {
+            if (link.rel === 'self') {
                 href = link.href;
             }
         });
 
-        let navArray = href.split('/');
+        const navArray = href.split('/');
 
-        //trying to get data for the current record so do nothing. Avoid this altogether by removing the link from the table.
-        if (navArray[navArray.length - 1] == this.navRoutes[this.navRoutes.length - 1]) {
+        // trying to get data for the current record so do nothing. Avoid this altogether by removing the link from the table.
+        if (navArray[navArray.length - 1] === this.navRoutes[this.navRoutes.length - 1]) {
             return;
         }
 
@@ -106,14 +98,11 @@ export class DetailComponent implements OnInit {
     }
 
     goHome() {
-        this._router.navigate(["/main-board"]);
+        this._router.navigate(['/main-board']);
     }
 
     gotToRoute(nav: string, disabled: boolean) {
-
         if (!disabled) {
-
-
             this._router.navigate(['/detail'], {
                 queryParams:
                     {

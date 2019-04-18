@@ -1,12 +1,9 @@
-/**
- * Created by jayhamilton on 5/16/17.
- */
 import {AfterViewInit, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import {credentialScheme, EndPoint, TAG} from './endpoint.model';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from "@angular/material";
+import {MatChipInputEvent} from '@angular/material';
 
 @Component({
     selector: 'app-endpoint-detail',
@@ -14,21 +11,14 @@ import {MatChipInputEvent} from "@angular/material";
     templateUrl: './endpointDetail.html',
     styleUrls: ['./styles.css']
 })
-
-/**
- *
- * TODO- Redo this entire file and add a state machine. This code is very fragile.
- */
-
 export class EndPointDetailComponent implements OnChanges, AfterViewInit {
-
     @Input() currentEndPoint: EndPoint;
 
     @Output() createEvent: EventEmitter<EndPoint> = new EventEmitter();
     @Output() updateEvent: EventEmitter<EndPoint> = new EventEmitter();
     @Output() deleteEvent: EventEmitter<EndPoint> = new EventEmitter();
 
-    preDefinedEndPoints = ["memory", "mock"];
+    preDefinedEndPoints = ['memory', 'mock'];
 
     currentState: string;
     preDefined = false;
@@ -37,15 +27,26 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
     credentialScheme = credentialScheme;
     useCredentials = false;
 
-    //chip/tag list control
+    // chip/tag list control
     selectable = true;
     removable = true;
     visible = true;
     addOnBlur = false;
     tagPlaceHolderText = '';
-    formTags = {tags: []};
+    formTags: any = {tags: []};
 
     readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+
+    constructor(private fb: FormBuilder) {
+        const me = this;
+        this.createForm();
+        this.endPointForm.valueChanges.forEach((value: any) => {
+                if (this.currentState !== 'create') {
+                    me.setFormState();
+                }
+            }
+        );
+    }
 
     addTag(event: MatChipInputEvent): void {
         const input = event.input;
@@ -61,7 +62,7 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
             input.value = '';
         }
 
-        if (this.currentState == 'reset') {
+        if (this.currentState === 'reset') {
             this.currentState = 'update';
         }
     }
@@ -118,21 +119,6 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
         this.formTags.tags = this.currentEndPoint.tags.slice();
     }
 
-    constructor(private fb: FormBuilder) {
-
-        let me = this;
-
-        this.createForm();
-
-        this.endPointForm.valueChanges.forEach(
-            (value => {
-                if (this.currentState !== 'create') {
-                    me.setFormState();
-                }
-            })
-        );
-    }
-
     disableControls() {
 
         this.endPointForm.get('name').disable();
@@ -140,7 +126,7 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
         this.endPointForm.get('description').disable();
         this.removable = false;
         this.selectable = false;
-        this.tagPlaceHolderText = "";
+        this.tagPlaceHolderText = '';
 
     }
 
@@ -151,7 +137,7 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
         this.endPointForm.get('description').enable();
         this.removable = true;
         this.selectable = true;
-        this.tagPlaceHolderText = "Add tag...";
+        this.tagPlaceHolderText = 'Add tag...';
 
     }
 
@@ -240,7 +226,7 @@ export class EndPointDetailComponent implements OnChanges, AfterViewInit {
         this.selectable = true;
         this.removable = true;
         this.preDefined = false;
-        this.tagPlaceHolderText = "Add tag..."
+        this.tagPlaceHolderText = 'Add tag...';
         /**
          * The create state is used to display the save icon even if the form is being edited
          * todo - implmenet state machine

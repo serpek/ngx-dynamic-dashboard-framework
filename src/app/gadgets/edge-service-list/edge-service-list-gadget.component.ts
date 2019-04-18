@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {
     style, trigger, animate, transition, state
 } from '@angular/animations';
@@ -10,9 +10,7 @@ import {GadgetPropertyService} from '../_common/gadget-property.service';
 import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service';
 import {GadgetBase} from '../_common/gadget-base';
 import {EdgeService} from './service';
-import {OptionsService} from "../../configuration/tab-options/service";
-
-declare var jQuery: any;
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -100,11 +98,8 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
             _endPointService,
             _changeDetectionRef,
             _optionsService);
-
         Object.assign(this, {serviceList});
-
-        const single = [];
-
+        const single: any[] = [];
         Object.assign(this, {single});
     }
 
@@ -114,17 +109,13 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
 
     public run() {
         this.initializeRunState(false);
-
         const me = this;
-        this.remoteService = this._edgeService.getMicroServices(this.getEndPoint().address).subscribe(results => {
-                const edgeServiceList = [];
+        this.remoteService = this._edgeService.getMicroServices(this.getEndPoint().address).subscribe((results: any) => {
+                const edgeServiceList: any[] = [];
                 this.setInRunState();
-
                 if (results instanceof Array) {
-                    results.forEach(function (item) {
-
+                    results.forEach((item: any) => {
                         me._edgeService.getTaskCount(item.uri).subscribe(data => {
-
                             const i = {
                                 active: false,
                                 host: '',
@@ -143,7 +134,7 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
                             i['serviceId'] = item.serviceId;
                             i['runningTaskCount'] = data;
                             edgeServiceList.push(i);
-                            edgeServiceList.sort(function (a, b) {
+                            edgeServiceList.sort((a: any, b: any) => {
                                 if (a['port'] < b['port']) {
                                     return -1;
                                 } else if (a['port'] > b['port']) {
@@ -152,9 +143,7 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
                                     return 0;
                                 }
                             });
-
                             Object.assign(me.edgeServiceList, edgeServiceList);
-
                             me.updateGraph();
                         });
                     });
@@ -165,10 +154,7 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
                 this.handleError(error)
             ,
             () =>
-                console
-                    .debug(
-                        'Connecting to the service'
-                    ));
+                console.debug('Connecting to the service'));
     }
 
     public checkPoxySelection() {
@@ -178,26 +164,19 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
     }
 
     public seedProxiesWithWork() {
-
         this._edgeService.seedProxiesWithWork().subscribe(data => {
-
             console.log('job running');
         });
-
     }
 
     public runProxyJob(uri: string) {
-
         this._edgeService.runJob(uri).subscribe(data => {
-
             console.log('running job on proxy: ' + uri);
         });
-
     }
 
     public stop() {
         this.setStopState(true);
-
         if (this.remoteService) {
             this.remoteService.unsubscribe();
         }
@@ -207,23 +186,17 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
     }
 
     public updateData(data: any[]) {
-
-        data.forEach(function (item) {
-
-            serviceList.forEach(function (service) {
-
+        data.forEach((item: any) => {
+            serviceList.forEach((service: any) => {
                 if (item.toString().includes(service.pseudoName)) {
                     service.active = true;
                     service.processId = item.toString().split(':')[0];
-
                 }
             });
         });
-
     }
 
     public updateProperties(updatedProperties: any) {
-
         /**
          * todo
          *  A similar operation exists on the procmman-config-service
@@ -235,34 +208,25 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
          * **/
 
         const updatedPropsObject = JSON.parse(updatedProperties);
-
-        this.propertyPages.forEach(function (propertyPage) {
-
-
+        this.propertyPages.forEach((propertyPage: any) => {
             for (let x = 0; x < propertyPage.properties.length; x++) {
-
                 for (const prop in updatedPropsObject) {
                     if (updatedPropsObject.hasOwnProperty(prop)) {
                         if (prop === propertyPage.properties[x].key) {
                             propertyPage.properties[x].value = updatedPropsObject[prop];
                         }
-
                     }
                 }
             }
         });
 
         this.title = updatedPropsObject.title;
-
         this.setEndPoint(updatedPropsObject.endpoint);
-
         this.showOperationControls = true;
-
     }
 
     updateGraph() {
-
-        const single = [];
+        const single: any[] = [];
         this.edgeServiceList.forEach(item => {
             single.push({
                 'name': item.port + ' ' + item.host,
@@ -270,7 +234,7 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
             });
         });
 
-        single.sort(function (a, b) {
+        single.sort((a: any, b: any) => {
             if (a['name'] < b['name']) {
                 return -1;
             } else if (a['name'] > b['name']) {
@@ -279,20 +243,14 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
                 return 0;
             }
         });
-
         Object.assign(this, {single});
-
     }
 
     public ngOnDestroy() {
-
         this.stop();
-
     }
 
     toggleAcordion(): void {
-
         this.detailMenuOpen = this.detailMenuOpen === 'out' ? 'in' : 'out';
-
     }
 }

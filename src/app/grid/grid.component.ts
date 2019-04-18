@@ -1,19 +1,21 @@
-import {Component, Output, EventEmitter} from '@angular/core';
+import {Component, Output, EventEmitter, OnInit, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
-import {GadgetConfigModel} from '../gadgets/_common/gadget-config-model';
 import {AddGadgetService} from '../add-gadget/service';
 import {ToastService} from '../toast/toast.service';
-import {MenuEventService} from '../menu/menu-service';
-
+import {DisplayGrid, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
+import {MenuEventService} from '@app/shell/menu/menu-service';
+import {GadgetConfigModel} from '@app/gadgets/_common/gadget-config-model';
 
 @Component({
     moduleId: module.id,
     selector: 'app-grid-component',
     templateUrl: './grid.html',
-    styleUrls: ['./styles-grid.css']
+    styleUrls: ['./styles-grid.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
-export class GridComponent {
+export class GridComponent implements OnInit {
     @Output() boardUpdateEvent: EventEmitter<any> = new EventEmitter();
 
     model: any = {};
@@ -35,11 +37,25 @@ export class GridComponent {
         y: 0
     };
 
+    options: GridsterConfig;
+    dashboard: Array<GridsterItem>;
+
+    static itemChange(item: any, itemComponent: any) {
+        console.info('itemChanged', item, itemComponent);
+    }
+
+    static itemResize(item: any, itemComponent: any) {
+        console.info('itemResized', item, itemComponent);
+    }
+
     /**
      * Todo - split model and board operations. This class should really focus on an individual board model's operations
      * within the grid. The board specific operations should be moved to the board component.
      * @param _gadgetInstanceService
-     * @param _procmonConfigurationService
+     * @param _configurationService
+     * @param _gadgetLibraryService
+     * @param _toastService
+     * @param _menuEventService
      */
 
     constructor(private _gadgetInstanceService: GadgetInstanceService,
@@ -48,13 +64,10 @@ export class GridComponent {
                 private _toastService: ToastService,
                 private _menuEventService: MenuEventService) {
 
-
         this.removeOldListeners();
-
         this.setupEventListeners();
         this.initializeBoard();
         this.getGadgetLibrary();
-
     }
 
     /**
@@ -66,7 +79,7 @@ export class GridComponent {
      * when changing the layout.
      *
      */
-    removeOldListeners(){
+    removeOldListeners() {
 
         this._gadgetInstanceService.unSubscribeAll();
         this._menuEventService.unSubscribeAll();
@@ -75,12 +88,12 @@ export class GridComponent {
 
     setupEventListeners() {
 
-        let gadgetRemoveEventSubscriber = this._gadgetInstanceService.listenForInstanceRemovedEventsFromGadgets().subscribe((message: string) => {
-            this.saveBoard('Gadget Removed From Board: ' + message, false);
-        });
+        const gadgetRemoveEventSubscriber = this._gadgetInstanceService
+            .listenForInstanceRemovedEventsFromGadgets().subscribe((message: string) => {
+                this.saveBoard('Gadget Removed From Board: ' + message, false);
+            });
 
-
-        let menuEventSubscriber = this._menuEventService.listenForMenuEvents().subscribe((event: IEvent) => {
+        const menuEventSubscriber = this._menuEventService.listenForMenuEvents().subscribe((event: IEvent) => {
             const edata = event['data'];
 
             switch (event['name']) {
@@ -118,24 +131,19 @@ export class GridComponent {
      * This is experimental code that deals with AI
      */
     getGadgetLibrary() {
-
-        this._gadgetLibraryService.getGadgetLibrary().subscribe(data => {
+        this._gadgetLibraryService.getGadgetLibrary().subscribe((data: any) => {
             this.gadgetLibrary.length = 0;
             const me = this;
-            data.library.forEach(function (item) {
+            data.library.forEach((item: any) => {
                 me.gadgetLibrary.push(item);
             });
         });
     }
 
-    getGadgetFromLibrary(gadgetType: string) {
-
+    getGadgetFromLibrary(gadgetType: string): any {
         let gadgetObject = null;
         this.gadgetLibrary.forEach(gadget => {
-
-
             if (gadgetType.localeCompare(gadget['componentType']) === 0) {
-
                 gadgetObject = gadget;
             }
         });
@@ -163,26 +171,16 @@ export class GridComponent {
      * This is the end of the experimental AI code.
      */
 
-    updateGadgetPositionInBoard($event, columnNumber, rowNumber, type) {
+    updateGadgetPositionInBoard($event: any, columnNumber: any, rowNumber: any, type: any) {
         let moveComplete = false;
-
-        this.getModel().rows.forEach(row => {
-
+        this.getModel().rows.forEach((row: any) => {
             let colpos = 0;
-
-            row.columns.forEach(column => {
-
+            row.columns.forEach((column: any) => {
                 let gadgetpos = 0;
-
                 if (column.gadgets) {
-
-                    column.gadgets.forEach(_gadget => {
-
+                    column.gadgets.forEach((_gadget: any) => {
                         if (_gadget.instanceId === $event.dragData && !moveComplete) {
-
                             const gadget = column.gadgets.splice(gadgetpos, 1);
-
-
                             if (!this.getModel().rows[rowNumber].columns[columnNumber].gadgets) {
                                 this.getModel().rows[rowNumber].columns[columnNumber].gadgets = [];
                             }
@@ -220,7 +218,7 @@ export class GridComponent {
 
     public addGadget(gadget: any) {
 
-        //console.log("Adding Gadget!!!!!!!@#@##@#@#@#@#@#@@");
+        // console.log("Adding Gadget!!!!!!!@#@##@#@#@#@#@#@@");
 
         const _gadget = Object.assign({}, gadget);
 
@@ -242,9 +240,9 @@ export class GridComponent {
 
     }
 
-    public updateBoardLayout(structure) {
+    public updateBoardLayout(structure: any) {
 
-        console.log("IN UPDATE BOARD LAYOUT");
+        console.log('IN UPDATE BOARD LAYOUT');
 
         // user selected the currently selected layout
         if (structure.id === this.getModel().id) {
@@ -282,22 +280,81 @@ export class GridComponent {
 
         // clear temporary object
         for (const member in  _model) {
-            delete  _model[member];
+            delete _model[member];
         }
 
         // persist the board change
         this.saveBoard('Grid Layout Update', false);
     }
 
+    public enableConfigMode() {
+
+        this._gadgetInstanceService.enableConfigureMode();
+    }
+
+    public setModel(model: any) {
+
+        this.model = Object.assign({}, model);
+    }
+
+    public getModel() {
+        return this.model;
+    }
+
+    ngOnInit() {
+        this.options = {
+            gridType: GridType.Fit,
+            displayGrid: DisplayGrid.OnDragAndResize,
+            pushItems: false,
+            minCols: 20,
+            minRows: 20,
+            swap: true,
+            draggable: {
+                enabled: true
+            },
+            resizable: {
+                enabled: true
+            }
+        };
+
+        this.dashboard = [
+            {cols: 2, rows: 1, y: 0, x: 0},
+            {cols: 2, rows: 2, y: 0, x: 2},
+            {cols: 1, rows: 1, y: 0, x: 4},
+            {cols: 3, rows: 2, y: 1, x: 4},
+            {cols: 1, rows: 1, y: 4, x: 5},
+            {cols: 1, rows: 1, y: 2, x: 1},
+            {cols: 2, rows: 2, y: 5, x: 5},
+            {cols: 2, rows: 2, y: 3, x: 2},
+            {cols: 2, rows: 1, y: 2, x: 2},
+            {cols: 1, rows: 1, y: 3, x: 4},
+            {cols: 1, rows: 1, y: 0, x: 6}
+        ];
+    }
+
+    changedOptions() {
+        if (this.options.api && this.options.api.optionsChanged) {
+            this.options.api.optionsChanged();
+        }
+    }
+
+    removeItem($event: any, item: any) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        this.dashboard.splice(this.dashboard.indexOf(item), 1);
+    }
+
+    addItem() {
+        this.dashboard.push({x: 0, y: 0, cols: 1, rows: 1});
+    }
+
     private updateGridState() {
-
         let gadgetCount = 0;
-
         if (this.getModel().rows) {
-            this.getModel().rows.forEach(function (row) {
-                row.columns.forEach(function (column) {
+            this.getModel().rows.forEach((row: any) => {
+                row.columns.forEach((column: any) => {
                     if (column.gadgets) {
-                        column.gadgets.forEach(function (gadget) {
+                        column.gadgets.forEach((gadget: any) => {
                             gadgetCount++;
                         });
                     }
@@ -306,7 +363,6 @@ export class GridComponent {
         }
 
         this.noGadgets = !gadgetCount;
-
         this.dashedStyle = {
             'border-style': this.noGadgets ? 'dashed' : 'none',
             'border-width': this.noGadgets ? '2px' : 'none',
@@ -315,24 +371,20 @@ export class GridComponent {
         };
     }
 
-    private readColumnsFromOriginalModel(_model) {
-
-        const columns = [];
-        _model.rows.forEach(function (row) {
-            row.columns.forEach(function (col) {
+    private readColumnsFromOriginalModel(_model: any) {
+        const columns: any[] = [];
+        _model.rows.forEach((row: any) => {
+            row.columns.forEach((col: any) => {
                 columns.push(col);
             });
         });
         return columns;
-
     }
 
-    private fillGridStructure(destinationModelStructure, originalColumns: any[], counter: number) {
-
+    private fillGridStructure(destinationModelStructure: any, originalColumns: any[], counter: number) {
         const me = this;
-
-        destinationModelStructure.rows.forEach(function (row) {
-            row.columns.forEach(function (destinationColumn) {
+        destinationModelStructure.rows.forEach((row: any) => {
+            row.columns.forEach((destinationColumn: any) => {
                 if (!destinationColumn.gadgets) {
                     destinationColumn.gadgets = [];
                 }
@@ -342,13 +394,10 @@ export class GridComponent {
                 }
             });
         });
-
         return counter;
-
     }
 
-    private copyGadgets(source, target) {
-
+    private copyGadgets(source: any, target: any) {
         if (source.gadgets && source.gadgets.length > 0) {
             let w = source.gadgets.shift();
             while (w) {
@@ -358,24 +407,13 @@ export class GridComponent {
         }
     }
 
-    public enableConfigMode() {
-
-        this._gadgetInstanceService.enableConfigureMode();
-    }
-
     private initializeBoard() {
 
         this._configurationService.getBoards().subscribe(board => {
-
             if (board && board instanceof Array && board.length) {
-
-                const sortedBoard = board.sort(function (a, b) {
-                    return a.boardInstanceId - b.boardInstanceId;
-                });
-
+                const sortedBoard = board.sort((a: any, b: any) => a.boardInstanceId - b.boardInstanceId);
                 this.loadBoard(sortedBoard[0].title);
             } else {
-
                 this.loadDefaultBoard();
             }
         });
@@ -491,15 +529,4 @@ export class GridComponent {
             this.gridInsertionPosition.x = this.getModel().rows.length - 1;
         }
     }
-
-    public setModel(model: any) {
-
-        this.model = Object.assign({}, model);
-    }
-
-    public getModel() {
-        return this.model;
-    }
-
-
 }

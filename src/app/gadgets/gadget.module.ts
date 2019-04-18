@@ -23,8 +23,6 @@ import {DndModule} from 'ng2-dnd';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {GadgetSharedModule} from './_common/gadget-shared.module';
 import {ErrorHandlerModule} from '../error/error.module';
-
-import {PortConnectionGadgetComponent} from './port-connection/port-connection-gadget.component';
 import {
     MatButtonModule, MatCheckboxModule, MatExpansionModule, MatIconModule, MatInputModule, MatOptionModule,
     MatProgressBarModule, MatSelectModule
@@ -40,17 +38,11 @@ import {DrillDownComponent} from './donut/drill-down-component';
 import {FacetModule} from '../facet/facet.module';
 import {TypeAheadInputModule} from '../typeahead-input/typeahead-input.module';
 import {TodoService} from './todo/service';
-import {ConnectionService} from './port-connection/service';
-import {BubbleGadgetComponent} from "./bubble/bubble-gadget.component";
-import {ResultViewComponent} from "./port-connection/result-view.component";
-import {SolutionViewComponent} from "./port-connection/solution-view.component";
-import {BarChartGadgetComponent} from "./barchart/barchart-gadget.component";
-import {BarChartService} from "./barchart/service";
-import {PieChartGadgetComponent} from "./piechart/piechart-gadget.component";
-import {PieChartService} from "./piechart/service";  // todo gadget
-
-
-
+import {BubbleGadgetComponent} from './bubble/bubble-gadget.component';
+import {BarChartGadgetComponent} from './barchart/barchart-gadget.component';
+import {BarChartService} from './barchart/service';
+import {PieChartGadgetComponent} from './piechart/piechart-gadget.component';
+import {PieChartService} from './piechart/service';  // todo gadget
 
 @NgModule({
     imports: [
@@ -88,16 +80,12 @@ import {PieChartService} from "./piechart/service";  // todo gadget
         StatisticGadgetComponent,
         PropertyListGadgetComponent,
         ServiceListGadgetComponent,
-        PortConnectionGadgetComponent,
         StorageObjectListComponent,
         DonutGadgetComponent,
         DrillDownComponent,
         BubbleGadgetComponent,
-        ResultViewComponent,
-        SolutionViewComponent,
         BarChartGadgetComponent,
         PieChartGadgetComponent
-
     ],
 
     providers: [TrendService,
@@ -108,12 +96,10 @@ import {PieChartService} from "./piechart/service";  // todo gadget
         StorageService,
         DonutService,
         APITokenService,
-        ConnectionService,
         TodoService,  // todo gadget
         BarChartService,
         PieChartService
     ],
-
     exports: [
         TodoGadgetComponent,  // todo gadget
         CPUGadgetComponent,
@@ -129,7 +115,6 @@ import {PieChartService} from "./piechart/service";  // todo gadget
         StatisticGadgetComponent,
         PropertyListGadgetComponent,
         ServiceListGadgetComponent,
-        PortConnectionGadgetComponent,
         StorageObjectListComponent,
         DonutGadgetComponent,
         BubbleGadgetComponent,

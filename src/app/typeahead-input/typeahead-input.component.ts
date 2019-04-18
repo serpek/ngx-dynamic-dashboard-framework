@@ -14,7 +14,7 @@ import {RuntimeService} from '../services/runtime.service';
 export class TypeAheadInputComponent {
 
     @Input() searchList: string[];
-    @Input() placeHolderText;
+    @Input() placeHolderText: string;
     @Input() typeAheadIsInMenu: boolean;
     @Output() selectionEvent = new EventEmitter<string>();
     @Output() ArtificialIntelligenceEventEmitter: EventEmitter<any> = new EventEmitter<any>();
@@ -23,8 +23,8 @@ export class TypeAheadInputComponent {
     maxAttempts = 5;
 
     public query = '';
-    public filteredList = [];
-    public elementRef;
+    public filteredList: any[] = [];
+    public elementRef: any;
 
     constructor(myElement: ElementRef, private _runtimeService: RuntimeService) {
         this.elementRef = myElement;
@@ -33,7 +33,7 @@ export class TypeAheadInputComponent {
 
     filter() {
         if (this.query !== '') {
-            this.filteredList = this.searchList.filter(function (el) {
+            this.filteredList = this.searchList.filter(function (el: any) {
                 return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             }.bind(this));
         } else {
@@ -49,18 +49,15 @@ export class TypeAheadInputComponent {
         }
     }
 
-    select(item) {
+    select(item: any) {
         this.query = item;
         this.filteredList = [];
         this.selectionEvent.emit(item);
     }
 
     processAIString(aiStatement: string) {
-
         console.log('Processing statement: ' + aiStatement);
-
         const engine = localStorage.getItem('ai_engine');
-
         if (engine.localeCompare('watson') === 0) {
             this._runtimeService.callWatsonAI(aiStatement).subscribe(data => {
                 this.ArtificialIntelligenceEventEmitter.emit(this.getAIIntentFromWatson(data));
@@ -74,7 +71,6 @@ export class TypeAheadInputComponent {
     }
 
     getAIIntentFromWitAI(aiObject: any) {
-
         let operation = '';
         let confidence = 0;
 
@@ -92,7 +88,6 @@ export class TypeAheadInputComponent {
     }
 
     getAIIntentFromWatson(aiObject: any) {
-
         let operation = '';
         let confidence = 0;
 

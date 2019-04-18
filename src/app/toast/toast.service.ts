@@ -3,7 +3,6 @@ import {Message} from './message';
 
 @Injectable()
 export class ToastService {
-
     messages: Array<Message> = [];
 
     constructor() {
@@ -13,15 +12,12 @@ export class ToastService {
         return this.messages;
     }
 
-    sendMessage(content, style) {
-
+    sendMessage(content: any, style: any) {
         const message = new Message(content, this.messages.length + 1, style);
         this.messages.push(message);
-
     }
 
-    dismissMessage(messageKey) {
-
+    dismissMessage(messageKey: any) {
         this.purgeDismissedMessages();
 
         this.messages.forEach(message => {
@@ -32,8 +28,7 @@ export class ToastService {
     }
 
     purgeDismissedMessages  () {
-        this.messages.forEach(function (message, index, object) {
-
+        this.messages.forEach(function (message: any, index: any, object: any) {
             if (message.dismissed) {
                 object.splice(index, 1);
             }

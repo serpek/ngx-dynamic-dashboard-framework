@@ -27,7 +27,7 @@ import {boardLayouts} from './model';
 })
 export class BoardLayoutManagerComponent implements AfterViewInit {
 
-    @Input() layoutId;
+    @Input() layoutId: any;
     @Output() boardLayoutChangeEvent: EventEmitter<any> = new EventEmitter();
 
     boardLayouts: any[];
@@ -41,9 +41,7 @@ export class BoardLayoutManagerComponent implements AfterViewInit {
     }
 
     selectBoardLayout(layoutId: number) {
-
         for (let x = 0; x < this.boardLayouts.length; x++) {
-
             if (this.boardLayouts[x].id === layoutId) {
                 this.boardLayoutChangeEvent.emit(this.boardLayouts[x]);
                 this.layoutId = layoutId;
@@ -53,13 +51,9 @@ export class BoardLayoutManagerComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-
     }
 
     initializeLayouts() {
-
         Object.assign(this, {boardLayouts});
-
     }
-
 }

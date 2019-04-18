@@ -18,18 +18,24 @@ import {HttpClientModule} from '@angular/common/http';
 import {DonutService} from '../gadgets/donut/service';
 import {TodoService} from '../gadgets/todo/service';
 import {ToastModule} from '../toast/toast.module';
-import {ConnectionService} from '../gadgets/port-connection/service';
-import {BubbleService} from "../gadgets/bubble/service";
-import {BarChartService} from "../gadgets/barchart/service";
-import {PieChartService} from "../gadgets/piechart/service";
+import {BubbleService} from '../gadgets/bubble/service';
+import {BarChartService} from '../gadgets/barchart/service';
+import {PieChartService} from '../gadgets/piechart/service';
+import {GridsterModule} from 'angular-gridster2';
+import {MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
 
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        MatIconModule,
+        MatCheckboxModule,
+        MatButtonModule,
         ToastModule,
-        HttpClientModule, DndModule.forRoot()
+        HttpClientModule,
+        DndModule.forRoot(),
+        GridsterModule
     ],
     declarations: [
         GridComponent,
@@ -49,9 +55,8 @@ import {PieChartService} from "../gadgets/piechart/service";
         EdgeService,
         CPUService,
         DonutService,
-        ConnectionService,
-        TodoService  // todo gadget
-        ,BubbleService,
+        TodoService,
+        BubbleService,
         BarChartService,
         PieChartService
     ]

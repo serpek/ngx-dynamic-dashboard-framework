@@ -97,7 +97,7 @@ export class FacetComponent implements OnInit {
 
     }
 
-    tagSelect(tagName) {
+    tagSelect(tagName: any) {
         this.tagSelectEvent.emit(tagName);
     }
 

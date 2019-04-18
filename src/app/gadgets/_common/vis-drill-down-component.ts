@@ -1,6 +1,3 @@
-/**
- * Created by jayhamilton on 1/24/17.
- */
 import {
     ViewChild, ElementRef, AfterViewInit, Component
 } from '@angular/core';
@@ -10,7 +7,6 @@ import {
 } from '@angular/animations';
 
 import {Facet} from '../../facet/facet-model';
-
 
 declare var jQuery: any;
 
@@ -29,7 +25,6 @@ declare var jQuery: any;
     moduleId: module.id,
     templateUrl: './vis-drill-down.html',
     animations: [
-
         trigger('contentSwitch', [
             state('inactive', style({
                 opacity: 0
@@ -51,11 +46,8 @@ declare var jQuery: any;
             transition('active => inactive', animate('750ms ease-out'))
         ])
     ]
-
-
 })
 export class VisDrillDownComponent implements AfterViewInit {
-
     modalicon: string;
     modalheader: string;
     modalconfig: string;
@@ -70,9 +62,7 @@ export class VisDrillDownComponent implements AfterViewInit {
     @ViewChild('vismodal_tag') vismodalaRef: ElementRef;
     configModal: any;
 
-
     constructor() {
-
     }
 
     showMessageModal(icon: string, header: string, message: string) {
@@ -80,9 +70,7 @@ export class VisDrillDownComponent implements AfterViewInit {
         this.modalheader = header;
         this.modalconfig = message;
         this.configModal.modal('show');
-
     }
-
 
     hideMessageModal() {
         this.modalicon = '';
@@ -91,26 +79,18 @@ export class VisDrillDownComponent implements AfterViewInit {
         this.configModal.modal('hide');
     }
 
-
     ngAfterViewInit() {
         this.configModal = jQuery(this.vismodalaRef.nativeElement);
         this.configModal.modal('hide');
     }
 
-    showDrillDownDetail($event) {
-
+    showDrillDownDetail($event: any) {
         const data: string = JSON.stringify($event, null, 4);
         this.showMessageModal(null, 'Detail', data);
-
-
     }
 
-    showDetail($event) {
-
+    showDetail($event: any) {
         const data: string = JSON.stringify($event, null, 4);
         this.showMessageModal(null, 'Detail', data);
-
-
     }
-
 }

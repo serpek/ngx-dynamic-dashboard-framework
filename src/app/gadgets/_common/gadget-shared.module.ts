@@ -14,12 +14,10 @@ import {MatProgressBarModule} from '@angular/material';
         MatProgressBarModule,
     ],
     declarations: [
-
         GadgetHeaderComponent,
         GadgetOperationComponent,
         HelpModalComponent,
         VisDrillDownComponent
-
     ],
     exports: [
         GadgetHeaderComponent,

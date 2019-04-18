@@ -4,13 +4,11 @@ import {Message} from './message';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {timer} from 'rxjs';
 
-
 @Component({
     selector: 'app-toast',
     templateUrl: './toast.component.html',
     styleUrls: ['./toast.component.css'],
     animations: [
-
         trigger('showHide', [
             transition(':enter', [
                 style({opacity: 0}),
@@ -23,30 +21,22 @@ import {timer} from 'rxjs';
         ])]
 })
 export class ToastComponent implements OnInit {
-
     messages: Array<Message>;
 
     constructor(private _toastService: ToastService) {
     }
 
-
     ngOnInit() {
-
         this.messages = this._toastService.getMessages();
 
-
-        timer(7000, 7000).subscribe(t => {
-
+        timer(7000, 7000).subscribe(() => {
             this.messages.forEach(message => {
-
                 this.dismiss(message.id);
-
             });
         });
-
     }
 
-    dismiss(id) {
+    dismiss(id: any) {
         this._toastService.dismissMessage(id);
     }
 

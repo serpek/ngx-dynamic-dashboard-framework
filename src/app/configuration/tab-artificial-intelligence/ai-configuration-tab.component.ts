@@ -16,10 +16,10 @@ import {environment} from '../../../environments/environment';
 })
 export class AIConfigurationTabComponent {
 
-    token;
-    ibmwatsonuid;
-    ibmwatsonpwd;
-    ibmwatsoncid;
+    token: any;
+    ibmwatsonuid: any;
+    ibmwatsonpwd: any;
+    ibmwatsoncid: any;
 
     ai_engines = [
         {value: 'watson', viewValue: 'Watson'},
@@ -46,8 +46,7 @@ export class AIConfigurationTabComponent {
         }
     }
 
-    selectChange(selectControl) {
-
+    selectChange(selectControl: any) {
         console.log(selectControl.value);
         this.selectedAIEngineValue = selectControl.value;
         localStorage.setItem('ai_engine', selectControl.value);

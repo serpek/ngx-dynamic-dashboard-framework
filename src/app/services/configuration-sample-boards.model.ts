@@ -11,9 +11,10 @@ export const sampleBoardCollection = {
                         'styleClass': 'three wide',
                         'gadgets': [
                             {
+                                cols: 2, rows: 1, y: 0, x: 0,
                                 'componentType': 'NewsGadgetComponent',
                                 'name': 'News',
-                                'description': "What's new",
+                                'description': 'What\'s new',
                                 'icon': 'images/news.png',
                                 'instanceId': 1500253814523,
                                 'tags': [
@@ -67,6 +68,7 @@ export const sampleBoardCollection = {
                         'styleClass': 'six wide',
                         'gadgets': [
                             {
+                                cols: 2, rows: 2, y: 0, x: 2,
                                 'componentType': 'CPUGadgetComponent',
                                 'name': 'CPU Chart',
                                 'description': 'Monitors CPU utilization for CDM.',
@@ -133,6 +135,7 @@ export const sampleBoardCollection = {
                                 }
                             },
                             {
+                                cols: 1, rows: 1, y: 0, x: 4,
                                 'componentType': 'TrendGadgetComponent',
                                 'name': 'Trend',
                                 'description': 'General trends.',
@@ -219,6 +222,7 @@ export const sampleBoardCollection = {
                         'styleClass': 'four wide',
                         'gadgets': [
                             {
+                                cols: 3, rows: 2, y: 1, x: 4,
                                 'componentType': 'StatisticGadgetComponent',
                                 'name': 'Statistic',
                                 'description': 'General statistic.',

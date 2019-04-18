@@ -1,8 +1,5 @@
-/**
- * Created by jayhamilton on 1/28/17.
- */
 import {Injectable} from '@angular/core';
-import {Subject,Observable} from 'rxjs';
+import {Subject, Observable} from 'rxjs';
 
 /**
  * todo - the name of this service does not represent the file name. This should be refactored. Consider moving this service to the gadget module instead.
@@ -10,7 +7,6 @@ import {Subject,Observable} from 'rxjs';
 
 @Injectable()
 export class GadgetInstanceService {
-
     private concreteGadgetInstances: any[] = [];
     private model: any;
     private subject: Subject<string> = new Subject<string>();
@@ -23,37 +19,31 @@ export class GadgetInstanceService {
         let gadgetFound = false;
 
         for (let x = 0; x < this.concreteGadgetInstances.length; x++) {
-            if (gadget.instance.instanceId == this.concreteGadgetInstances[x]['instance']['instanceId']) {
+            if (gadget.instance.instanceId === this.concreteGadgetInstances[x]['instance']['instanceId']) {
                 gadgetFound = true;
             }
         }
 
-        if (gadgetFound == false) {
+        if (gadgetFound === false) {
             this.concreteGadgetInstances.push(gadget);
-
         }
     }
 
     enableConfigureMode() {
-
-        this.concreteGadgetInstances.forEach(function (gadget) {
+        this.concreteGadgetInstances.forEach((gadget: any) => {
             gadget.instance.toggleConfigMode();
         });
     }
 
     removeInstance(id: number) {
-
-        console.log("REMOVING GADGET");
+        console.log('REMOVING GADGET');
         // remove instance representation from model
-        this.model.rows.forEach(function (row) {
-            row.columns.forEach(function (column) {
+        this.model.rows.forEach((row: any) => {
+            row.columns.forEach((column: any) => {
                 if (column.gadgets) {
                     for (let i = column.gadgets.length - 1; i >= 0; i--) {
-
                         if (column.gadgets[i].instanceId === id) {
-
                             column.gadgets.splice(i, 1);
-
                             break;
                         }
                     }
@@ -63,13 +53,9 @@ export class GadgetInstanceService {
 
         // removes concrete instance from service
         for (let x = this.concreteGadgetInstances.length - 1; x >= 0; x--) {
-
             if (this.concreteGadgetInstances[x].instance.instanceId === id) {
-
                 const _gadget = this.concreteGadgetInstances.splice(x, 1);
-
                 _gadget[0].destroy();
-
                 break;
             }
         }
@@ -86,7 +72,6 @@ export class GadgetInstanceService {
      this allows this service to update the board when a delete operation occurs
      */
     setCurrentModel(model: any) {
-
         this.model = model;
     }
 
@@ -102,18 +87,15 @@ export class GadgetInstanceService {
     }
 
     unSubscribeAll() {
-
         this.subscribers.forEach(subscription => {
             subscription.unsubscribe();
         });
 
         this.subscribers.length = 0;
         this.clearAllInstances();
-
     }
-    clearAllInstances() {
 
+    clearAllInstances() {
         this.concreteGadgetInstances.length = 0;
     }
-
 }

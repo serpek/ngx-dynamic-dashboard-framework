@@ -74,7 +74,7 @@ export class AddGadgetComponent implements AfterViewInit {
         this.getObjectList();
     }
 
-    actionHandler(actionItem, actionName) {
+    actionHandler(actionItem: any, actionName: any) {
         this.addGadgetEvent.emit(actionItem);
         this.hideMessageModal();
 

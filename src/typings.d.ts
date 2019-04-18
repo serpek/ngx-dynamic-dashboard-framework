@@ -5,3 +5,5 @@ interface NodeModule {
 }
 declare module 'sockjs-client';
 declare module 'stompjs';
+declare module 'lodash';
+declare module '*.json';

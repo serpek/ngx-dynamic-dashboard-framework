@@ -2,9 +2,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AddGadgetService} from '../add-gadget/service';
 import {Facet, Tag} from './facet-model';
 
-/**
- * Created by jayhamilton on 6/27/17.
- */
 @Component({
     moduleId: module.id,
     selector: 'app-filter-list',
@@ -22,9 +19,7 @@ export class FilterListComponent {
     @Output() tagSelectEvent: EventEmitter<any> = new EventEmitter();
     @Input() facet_tags: Array<Facet>;
 
-    tagSelect(tagName) {
-
+    tagSelect(tagName: any) {
         this.tagSelectEvent.emit(tagName);
-
     }
 }

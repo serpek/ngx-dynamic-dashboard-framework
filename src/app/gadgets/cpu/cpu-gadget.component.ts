@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {GadgetInstanceService} from '../../grid/grid.service';
 import {RuntimeService} from '../../services/runtime.service';
 import {GadgetPropertyService} from '../_common/gadget-property.service';
@@ -6,7 +6,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {CPUService} from './service';
 import {Router} from '@angular/router';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -68,19 +68,14 @@ export class CPUGadgetComponent extends GadgetBase {
     }
 
     public updateData(data: any[]) {
-
         this._cpuService.getMockData().subscribe(cpu => {
-
                 Object.assign(this, {cpu});
-
             },
             error => this.handleError(error));
     }
 
-    public drillDown(data) {
-        this._route.navigate(['/detail'], {
-
-        });
+    public drillDown(data: any) {
+        this._route.navigate(['/detail'], {});
     }
 
     public updateProperties(updatedProperties: any) {
@@ -97,7 +92,7 @@ export class CPUGadgetComponent extends GadgetBase {
 
         const updatedPropsObject = JSON.parse(updatedProperties);
 
-        this.propertyPages.forEach(function (propertyPage) {
+        this.propertyPages.forEach((propertyPage: any) => {
 
 
             for (let x = 0; x < propertyPage.properties.length; x++) {

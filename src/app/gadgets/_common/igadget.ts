@@ -1,29 +1,23 @@
-/**
- * Created by jayhamilton on 2/25/17.
- */
 interface IGadget {
+    run(): void;
 
-    run();
+    stop(): void;
 
-    stop();
+    toggleConfigMode(): void;
 
-    toggleConfigMode();
+    initializeProperties(): void;
 
-    initializeProperties();
+    updateProperties(updatedProperties: any): any;
 
-    updateProperties(updatedProperties: any);
+    updateData(data: any[]): void;
 
-    updateData(data: any[]);
+    handleError(error: any): void;
 
-    handleError(error: any);
+    remove(): any;
 
-    remove();
+    showGadgetControls(enable: boolean): any;
 
-    showGadgetControls(enable: boolean);
+    configureGadget(instanceId: number, config: any, tags: Array<any>): void;
 
-    configureGadget(instanceId: number, config: any, tags: Array<any>);
-
-    updateGadgetWithGlobalOptions(options:any);
-
-
+    updateGadgetWithGlobalOptions(options: any): void;
 }

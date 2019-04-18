@@ -25,7 +25,6 @@ export class DataListComponent {
     objectListCopy: any[] = [];
 
     filterListByTags(filterList: string[]) {
-
         this.copyObjectList();
         this.objectList = this.objectListCopy.filter(object => {
 
@@ -34,16 +33,13 @@ export class DataListComponent {
             if (!filterList.length) {
                 return true;
             } else {
-                object.tags.forEach(tag => {
-
+                object.tags.forEach((tag: any) => {
                     filterList.forEach(filter => {
-
                         if (tag.name.toLocaleLowerCase() === filter.toLocaleLowerCase()) {
                             tagFound = true;
                         }
                     });
                 });
-
                 return tagFound;
             }
         });
@@ -51,20 +47,15 @@ export class DataListComponent {
     }
 
     filterListBySearchString(searchString: string) {
-
         this.copyObjectList();
         this.objectList = this.objectListCopy.filter(object => {
-
             if (searchString.localeCompare('') === 0) {
                 return true;
             } else {
-
                 if (object.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) {
-
                     return true;
                 }
             }
-
         });
     }
 
@@ -79,4 +70,3 @@ export class DataListComponent {
         }
     }
 }
-

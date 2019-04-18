@@ -8,7 +8,7 @@ import {StorageService} from './service';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {Facet} from '../../facet/facet-model';
 import {FacetTagProcessor} from '../../facet/facet-tag-processor';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -30,7 +30,6 @@ import {OptionsService} from "../../configuration/tab-options/service";
     ]
 })
 export class StorageObjectListComponent extends GadgetBase {
-
     // runtime document subscription
     news: any;
     resource: string;
@@ -61,13 +60,12 @@ export class StorageObjectListComponent extends GadgetBase {
 
     public preRun(): void {
         this.updateData(null);
-
         this.run();
     }
 
     public run() {
         this.news = [];
-        this.initializeRunState( true);
+        this.initializeRunState(true);
         this.updateData(null);
     }
 
@@ -76,9 +74,8 @@ export class StorageObjectListComponent extends GadgetBase {
     }
 
     public updateData(data: any[]) {
-
         this._storageService.get().subscribe(item => {
-                item['volumes'].forEach(_data => {
+                item['volumes'].forEach((_data: any) => {
                     this.objectList.push(_data);
                     this.objectTitleList.push(_data.name);
                 });
@@ -89,7 +86,6 @@ export class StorageObjectListComponent extends GadgetBase {
     }
 
     public updateProperties(updatedProperties: any) {
-
         /**
          * todo
          *  A similar operation exists on the procmman-config-service
@@ -99,33 +95,23 @@ export class StorageObjectListComponent extends GadgetBase {
          *  config service or the property page service.
          *
          * **/
-
         const updatedPropsObject = JSON.parse(updatedProperties);
-
-        this.propertyPages.forEach(function (propertyPage) {
-
-
+        this.propertyPages.forEach((propertyPage: any) => {
             for (let x = 0; x < propertyPage.properties.length; x++) {
-
                 for (const prop in updatedPropsObject) {
                     if (updatedPropsObject.hasOwnProperty(prop)) {
                         if (prop === propertyPage.properties[x].key) {
                             propertyPage.properties[x].value = updatedPropsObject[prop];
                         }
-
                     }
                 }
             }
         });
-
         this.title = updatedPropsObject.title;
         this.setEndPoint(updatedPropsObject.endpoint);
         this.updateData(null);
     }
 
-    actionHandler(actionItem, actionName) {
-
-
+    actionHandler(actionItem: any, actionName: any) {
     }
-
 }

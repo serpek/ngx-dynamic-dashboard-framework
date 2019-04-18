@@ -6,7 +6,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {BubbleService} from './service';
 import {Router} from '@angular/router';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -32,7 +32,6 @@ export class BubbleGadgetComponent extends GadgetBase {
         domain: ['#00ff00', '#4800ff', '#4894FF', '#AF0854']
     };
 
-
     constructor(protected _runtimeService: RuntimeService,
                 protected _gadgetInstanceService: GadgetInstanceService,
                 protected _propertyService: GadgetPropertyService,
@@ -51,16 +50,13 @@ export class BubbleGadgetComponent extends GadgetBase {
     }
 
     public preRun(): void {
-
         // this.run();
     }
 
     public run() {
-
         this.data = [];
         this.initializeRunState(true);
         this.updateData(null);
-
     }
 
     public stop() {
@@ -68,18 +64,14 @@ export class BubbleGadgetComponent extends GadgetBase {
     }
 
     public updateData(_data: any[]) {
-
         this._bubbleService.getMockData().subscribe(data => {
-
                 Object.assign(this, {data});
-
                 console.log(data);
-
             },
             error => this.handleError(error));
     }
 
-    public drillDown(data) {
+    public drillDown(data: any) {
         this._route.navigate(['/detail'], {});
     }
 
@@ -96,23 +88,17 @@ export class BubbleGadgetComponent extends GadgetBase {
          * **/
 
         const updatedPropsObject = JSON.parse(updatedProperties);
-
-        this.propertyPages.forEach(function (propertyPage) {
-
-
+        this.propertyPages.forEach((propertyPage: any) => {
             for (let x = 0; x < propertyPage.properties.length; x++) {
-
                 for (const prop in updatedPropsObject) {
                     if (updatedPropsObject.hasOwnProperty(prop)) {
                         if (prop === propertyPage.properties[x].key) {
                             propertyPage.properties[x].value = updatedPropsObject[prop];
                         }
-
                     }
                 }
             }
         });
-
         /*
         this.title = updatedPropsObject.title;
         this.showXAxis = updatedPropsObject.chart_properties;
@@ -122,11 +108,7 @@ export class BubbleGadgetComponent extends GadgetBase {
         this.showXAxisLabel = updatedPropsObject.chart_properties;
         this.showYAxisLabel = updatedPropsObject.chart_properties;
         */
-
         this.setEndPoint(updatedPropsObject.endpoint);
-
         this.showOperationControls = true;
-
     }
-
 }

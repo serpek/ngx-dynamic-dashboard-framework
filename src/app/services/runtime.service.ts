@@ -107,9 +107,8 @@ export class RuntimeService {
         }
     }
 
-    callback(data) {
+    callback(data: any) {
         // console.log(data);
-
     }
 
     /**

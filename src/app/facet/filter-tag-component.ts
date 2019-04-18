@@ -3,9 +3,7 @@ import { Component, EventEmitter, Output} from '@angular/core';
 import {
     style, trigger, animate, transition
 } from '@angular/animations';
-/**
- * Created by jayhamilton on 6/27/17.
- */
+
 @Component({
     moduleId: module.id,
     selector: 'app-filter-tag',
@@ -32,29 +30,22 @@ import {
                 ])
             ])
     ]
-
 })
 export class FilterTagComponent {
-
     @Output() updateFilterListEvent = new EventEmitter<any>();
 
     filterList: Array<string> = [];
-
     constructor() {
     }
 
-    updateFilterList(filter) {
-
+    updateFilterList(filter: any) {
         filter = filter.toLocaleLowerCase();
-
         const index: number = this.filterList.indexOf(filter);
         if (index !== -1) {
             this.filterList.splice(index, 1);
         } else {
             this.filterList.push(filter);
         }
-
         this.updateFilterListEvent.emit(this.filterList);
-
     }
 }

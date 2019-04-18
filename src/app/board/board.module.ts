@@ -1,30 +1,63 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {GridModule} from '../grid/grid.module';
-import {BoardComponent} from './board.component';
-import {CPUMGadgetComponent} from '../gadgets/cpum/cpum-gadget.component';
-import {EdgeServiceListGadgetComponent} from '../gadgets/edge-service-list/edge-service-list-gadget.component';
-import {TrendLineGadgetComponent} from '../gadgets/trend-line/trend-line-gadget.component';
-import {JobAnalysisGadgetComponent} from '../gadgets/job-analysis/job-analysis-gadget.component';
-import {NewsGadgetComponent} from '../gadgets/news/news-gadget.component';
-import {TrendGadgetComponent} from '../gadgets/trend/trend-gadget.component';
-import {StatisticGadgetComponent} from '../gadgets/statistic/statistic-gadget.component';
-import {DiskGadgetComponent} from '../gadgets/disk/disk-gadget.component';
-import {PropertyListGadgetComponent} from '../gadgets/property-list/property-list-gadget.component';
-import {ServiceListGadgetComponent} from '../gadgets/service-list/service-list-gadget.component';
-import {CPUGadgetComponent} from '../gadgets/cpu/cpu-gadget.component';
-import {MemoryGadgetComponent} from '../gadgets/memory/memory-gadget.component';
-import {PortConnectionGadgetComponent} from '../gadgets/port-connection/port-connection-gadget.component';
-import {StorageObjectListComponent} from '../gadgets/storage-object-list/storage-object-list.component';
-import {DonutGadgetComponent} from '../gadgets/donut/donut-gadget.component';
-import {TodoGadgetComponent} from '../gadgets/todo/todo-gadget.component';  // todo gadget
-import {BubbleGadgetComponent} from "../gadgets/bubble/bubble-gadget.component";
-import {BarChartGadgetComponent} from "../gadgets/barchart/barchart-gadget.component";
-import {PieChartGadgetComponent} from "../gadgets/piechart/piechart-gadget.component";
+import {TranslateModule} from '@ngx-translate/core';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {
+    MatButtonModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatInputModule, MatOptionModule,
+    MatProgressBarModule, MatSelectModule
+} from '@angular/material';
+import {FormsModule} from '@angular/forms';
+
+import {GridModule} from '@app/grid/grid.module';
+import {CoreModule} from '@app/core';
+import {SharedModule} from '@app/shared';
+import {BoardRoutingModule} from '@app/board/board-routing.module';
+import {BoardComponent} from '@app/board/board.component';
+import {DynamicFormModule} from '@app/dynamic-form/dynamic-form-module';
+import {ErrorHandlerModule} from '@app/error/error.module';
+import {FacetModule} from '@app/facet/facet.module';
+import {TypeAheadInputModule} from '@app/typeahead-input/typeahead-input.module';
+import {DataListModule} from '@app/datalist/data-list.module';
+import {EndPointService} from '@app/configuration/tab-endpoint/endpoint.service';
+import {OptionsService} from '@app/configuration/tab-options/service';
+import {RuntimeService} from '@app/services/runtime.service';
+import {ConfigurationService} from '@app/services/configuration.service';
+import {ObservableWebSocketService} from '@app/services/websocket-service';
+
+import {
+    GadgetSharedModule,
+    GadgetPropertyService,
+    MemoryGadgetComponent,
+    CPUGadgetComponent,
+    ServiceListGadgetComponent,
+    PropertyListGadgetComponent,
+    DiskGadgetComponent,
+    StatisticGadgetComponent,
+    TrendGadgetComponent,
+    NewsGadgetComponent,
+    JobAnalysisGadgetComponent,
+    TrendLineGadgetComponent,
+    EdgeServiceListGadgetComponent,
+    CPUMGadgetComponent,
+    StorageObjectListComponent,
+    DonutGadgetComponent,
+    TodoGadgetComponent,
+    BubbleGadgetComponent,
+    BarChartGadgetComponent,
+    PieChartGadgetComponent
+} from '@app/gadgets';
+import {MenuEventService} from '@app/shell/menu/menu-service';
 
 @NgModule({
     imports: [
         CommonModule,
+        TranslateModule,
+        CoreModule,
+        SharedModule,
         GridModule.withComponents([
             MemoryGadgetComponent,
             CPUGadgetComponent,
@@ -38,17 +71,40 @@ import {PieChartGadgetComponent} from "../gadgets/piechart/piechart-gadget.compo
             TrendLineGadgetComponent,
             EdgeServiceListGadgetComponent,
             CPUMGadgetComponent,
-            PortConnectionGadgetComponent,
             StorageObjectListComponent,
             DonutGadgetComponent,
-            TodoGadgetComponent  // todo gadget
-            , BubbleGadgetComponent,
+            TodoGadgetComponent,
+            BubbleGadgetComponent,
             BarChartGadgetComponent,
             PieChartGadgetComponent
-
         ]),
+        DynamicFormModule,
+        ErrorHandlerModule,
+        NgxChartsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCheckboxModule,
+        MatInputModule,
+        MatProgressBarModule,
+        MatExpansionModule,
+        MatOptionModule,
+        MatSelectModule,
+        FormsModule,
+        FacetModule,
+        TypeAheadInputModule,
+        DataListModule,
+        GadgetSharedModule,
+        BoardRoutingModule
     ],
-    providers: [],
+    providers: [
+        EndPointService,
+        RuntimeService,
+        ConfigurationService,
+        GadgetPropertyService,
+        ObservableWebSocketService,
+        MenuEventService,
+        OptionsService
+    ],
     declarations: [
         BoardComponent
     ]

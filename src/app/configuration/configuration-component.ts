@@ -5,7 +5,7 @@ import {
     ViewChild, ElementRef, AfterViewInit, Component, Output, EventEmitter, Input
 } from '@angular/core';
 import {
-     style, state, trigger, animate, transition
+    style, state, trigger, animate, transition
 } from '@angular/animations';
 
 import {tabsModel} from './tabs.model';
@@ -30,7 +30,6 @@ declare var jQuery: any;
     templateUrl: './view.html',
     styleUrls: ['./styles.css'],
     animations: [
-
         trigger('contentSwitch', [
             state('inactive', style({
                 opacity: 0
@@ -46,20 +45,17 @@ declare var jQuery: any;
 
 })
 export class ConfigurationComponent implements AfterViewInit {
-
     @Output() dashboardCreateEvent: EventEmitter<any> = new EventEmitter();
     @Output() dashboardEditEvent: EventEmitter<any> = new EventEmitter();
     @Output() dashboardDeleteEvent: EventEmitter<any> = new EventEmitter();
     @Input() dashboardList: any [];
 
-
     newDashboardItem = '';
-
 
     modalicon: string;
     modalheader: string;
     modalconfig: string;
-    env:any;
+    env: any;
 
     @ViewChild('boardconfigmodal_tag') boardconfigmodalaRef: ElementRef;
     configModal: any;
@@ -67,11 +63,9 @@ export class ConfigurationComponent implements AfterViewInit {
     tabsModel: any[];
 
     constructor() {
-
         Object.assign(this, {tabsModel});
         this.setCurrentTab(0);
         this.env = environment;
-
     }
 
 
@@ -88,11 +82,11 @@ export class ConfigurationComponent implements AfterViewInit {
     }
 
     createBoard(name: string) {
-        if (name !==  '') {
+        if (name !== '') {
             this.dashboardCreateEvent.emit(name);
             this.newDashboardItem = '';
         }
-        console.log("Creating new board event from configuration component: " + name);
+        console.log('Creating new board event from configuration component: ' + name);
     }
 
     editBoard(name: string) {
@@ -109,8 +103,7 @@ export class ConfigurationComponent implements AfterViewInit {
         this.configModal.modal('hide');
     }
 
-    setCurrentTab(tab_index) {
+    setCurrentTab(tab_index: any) {
         this.currentTab = this.tabsModel[tab_index].displayName;
     }
-
 }

@@ -17,9 +17,8 @@ export class EndPointService {
 
     getEndPoints() {
         if (localStorage.getItem('endpoint') == null) {
-
             return new Observable(observer => {
-                const base = {endPoint: []};
+                const base: any = {endPoint: []};
                 const mockBarChart = new EndPoint(
                     'Chart Mock Bar Data Source',
                     '/assets/api/chart-mock-bar-model.json',
@@ -30,7 +29,7 @@ export class EndPointService {
                     'token API',
                     'token API Header',
                     'token API Property',
-                    {'tags':[{'name':'bar'},{'name':'chart'}]}
+                    {'tags': [{'name': 'bar'}, {'name': 'chart'}]}
                 );
                 base.endPoint.push(mockBarChart);
                 const mockPieChart = new EndPoint(
@@ -43,7 +42,7 @@ export class EndPointService {
                     'token API',
                     'token API Header',
                     'token API Property',
-                    {'tags':[{'name':'pie'},{'name':'chart'}]}
+                    {'tags': [{'name': 'pie'}, {'name': 'chart'}]}
                 );
                 base.endPoint.push(mockPieChart);
                 const memoryEndpoint = new EndPoint(
@@ -56,7 +55,7 @@ export class EndPointService {
                     'token API',
                     'token API Header',
                     'token API Property',
-                    {'tags':[{'name':'memory'}]}
+                    {'tags': [{'name': 'memory'}]}
                 );
                 base.endPoint.push(memoryEndpoint);
 

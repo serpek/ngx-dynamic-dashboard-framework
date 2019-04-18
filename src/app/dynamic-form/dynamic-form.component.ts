@@ -1,6 +1,3 @@
-/**
- * Created by jayhamilton on 2/5/17.
- */
 import {
     Component, Input, OnInit, Output, EventEmitter,
     ChangeDetectorRef, AfterViewInit
@@ -17,7 +14,6 @@ import {ConfigurationService} from '../services/configuration.service';
 import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
 import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
 
-
 @Component({
     /* solves error: Expression has changed after it was checked exception resolution - https://www.youtube.com/watch?v=K_BRcal-JfI*/
     // changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,7 +22,6 @@ import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
     templateUrl: './dynamic-form.component.html',
     styleUrls: ['./styles-props.css'],
     animations: [
-
         trigger('contentSwitch', [
             state('inactive', style({
                 opacity: 0
@@ -52,8 +47,7 @@ import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
     providers: [PropertyControlService]
 })
 export class DynamicFormComponent implements OnInit, AfterViewInit {
-
-    @Input() gadgetTags: any[];//todo - use to control what endpoints are displayed
+    @Input() gadgetTags: any[]; // todo - use to control what endpoints are displayed
     @Input() propertyPages: any[];
     @Input() instanceId: number;
     @Output() updatePropertiesEvent: EventEmitter<any> = new EventEmitter(true);
@@ -74,47 +68,33 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
 
     /* better solution that solves error: Expression has changed after it was checked exception resolution*/
     ngAfterViewInit(): void {
-
         this.changeDetectionRef.detectChanges();
     }
 
     ngOnInit() {
-
         this.form = this.pcs.toFormGroupFromPP(this.propertyPages);
-
     }
 
     onSubmit() {
-
         this.payLoad = JSON.stringify(this.form.value);
-
         console.debug('Saving Form!');
         this.updatePropertiesEvent.emit(this.payLoad);
-
         console.debug('Sending configuration to the config service!');
         this.configService.notifyGadgetOnPropertyChange(this.payLoad, this.instanceId);
 
         if (this.payLoad) {
             this.showMessage = true;
-
-            setTimeout(function() {
+            setTimeout(function () {
                 this.showMessage = false;
             }.bind(this), 2000);
         }
     }
 
-    setCurrentTab(tab) {
+    setCurrentTab(tab: any) {
         this.currentTab = tab.groupId;
-
     }
 
-    get isPropertyPageValid (){
-
+    get isPropertyPageValid() {
         return this.form.valid;
     }
 }
-
-
-
-
-

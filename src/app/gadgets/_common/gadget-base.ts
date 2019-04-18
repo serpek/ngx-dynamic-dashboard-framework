@@ -6,14 +6,11 @@ import {RuntimeService} from '../../services/runtime.service';
 import {GadgetInstanceService} from '../../grid/grid.service';
 import {AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DynamicFormComponent} from '../../dynamic-form/dynamic-form.component';
-import {OptionsService} from "../../configuration/tab-options/service";
-
-/**
- * Created by jayhamilton on 6/22/17.
- */
+import {OptionsService} from '../../configuration/tab-options/service';
 
 export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterViewInit {
     @ViewChild(DynamicFormComponent) propertyPageForm: DynamicFormComponent;
+
     title: string;
     instanceId: number;
     config: any;
@@ -77,16 +74,16 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
     errorObject: ErrorObject;
     errorExists = false;
-    globalOptions:any;
+    globalOptions: any;
 
-    constructor(protected _runtimeService: RuntimeService,
-                protected _gadgetInstanceService: GadgetInstanceService,
-                protected _propertyService: GadgetPropertyService,
-                protected _endPointService: EndPointService,
-                protected changeDetectionRef: ChangeDetectorRef,
-                protected _optionsService: OptionsService) {
+    protected constructor(protected _runtimeService: RuntimeService,
+                          protected _gadgetInstanceService: GadgetInstanceService,
+                          protected _propertyService: GadgetPropertyService,
+                          protected _endPointService: EndPointService,
+                          protected changeDetectionRef: ChangeDetectorRef,
+                          protected _optionsService: OptionsService) {
 
-        this._optionsService.listenForGlobalOptionsChanges().subscribe(options=>{
+        this._optionsService.listenForGlobalOptionsChanges().subscribe(options => {
 
             /**
              * This is called when there is a change to the options tab within the configuration modal.
@@ -97,12 +94,12 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
             this.updateGadgetWithGlobalOptions(options);
         });
 
-        this.updateGadgetWithGlobalOptions(this._optionsService.getBoardOptions())
+        this.updateGadgetWithGlobalOptions(this._optionsService.getBoardOptions());
     }
 
     public ngOnInit() {
-       this.toggleConfigMode();
-       this.changeDetectionRef.detectChanges();
+        this.toggleConfigMode();
+        this.changeDetectionRef.detectChanges();
     }
 
     public ngAfterViewInit() {
@@ -129,9 +126,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     }
 
     public toggleConfigMode() {
-
         if (!this.inConfig) {
-
             this.initializeProperties();
         }
         this.inConfig = !this.inConfig;
@@ -144,15 +139,15 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
         }
     }
 
-    public abstract run(): void
+    public abstract run(): void;
 
-    public abstract stop(): void
+    public abstract stop(): void;
 
-    public abstract updateProperties(updatedProperties: any): void
+    public abstract updateProperties(updatedProperties: any): void;
 
-    public abstract updateData(data: any[]): void
+    public abstract updateData(data: any[]): void;
 
-    public abstract preRun(): void
+    public abstract preRun(): void;
 
     public handleError(error: ErrorObject) {
 
@@ -217,16 +212,26 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
          *  Todo - remove this prerun call and refactor remaining code. Prerun was called twice and had an impact on the barchart api calls.
          *  API calls continued after route changes which is undesirable. See ngAfterViewInit where it is also called from.
          */
-        //this.preRun();
+        // this.preRun();
+
+    }
+
+    public ngOnDestroy() {
+
+    }
+
+    public updateGadgetWithGlobalOptions(options: any) {
+
+
+        this.globalOptions = Object.assign({}, options);
+
 
     }
 
     protected setEndPoint(endpoint: string) {
-
         this._endPointService.getEndPoints().subscribe(data => {
-
             if (data['endPoint']) {
-                data['endPoint'].forEach(item => {
+                data['endPoint'].forEach((item: any) => {
                     if (item.name === endpoint) {
                         this.endpointObject = item;
                     }
@@ -244,29 +249,13 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     }
 
     protected getPropFromPropertyPages(prop: string) {
-
         for (let x = 0; x < this.config.propertyPages.length; x++) {
-
             for (let i = 0; i < this.config.propertyPages[x].properties.length; i++) {
-
                 if (this.config.propertyPages[x].properties[i].key === prop) {
                     return this.config.propertyPages[x].properties[i].value;
                 }
             }
-
         }
         return 'Unknown';
-    }
-
-    public ngOnDestroy() {
-
-    }
-
-    public updateGadgetWithGlobalOptions(options:any){
-
-
-        this.globalOptions = Object.assign({},options);
-
-
     }
 }

@@ -10,31 +10,21 @@ import {JobAnalysisGadgetComponent} from '../gadgets/job-analysis/job-analysis-g
 import {TrendLineGadgetComponent} from '../gadgets/trend-line/trend-line-gadget.component';
 import {EdgeServiceListGadgetComponent} from '../gadgets/edge-service-list/edge-service-list-gadget.component';
 import {CPUMGadgetComponent} from '../gadgets/cpum/cpum-gadget.component';
-import {PortConnectionGadgetComponent} from '../gadgets/port-connection/port-connection-gadget.component';
 import {StorageObjectListComponent} from '../gadgets/storage-object-list/storage-object-list.component';
 import {DonutGadgetComponent} from '../gadgets/donut/donut-gadget.component';
 import {TodoGadgetComponent} from '../gadgets/todo/todo-gadget.component';
-import {BubbleGadgetComponent} from "../gadgets/bubble/bubble-gadget.component";
-import {BarChartGadgetComponent} from "../gadgets/barchart/barchart-gadget.component";
-import {PieChartGadgetComponent} from "../gadgets/piechart/piechart-gadget.component";
-
-/**
- * Created by jayhamilton on 6/30/17.
- */
+import {BubbleGadgetComponent} from '../gadgets/bubble/bubble-gadget.component';
+import {BarChartGadgetComponent} from '../gadgets/barchart/barchart-gadget.component';
+import {PieChartGadgetComponent} from '../gadgets/piechart/piechart-gadget.component';
 
 export class GadgetFactory {
-
-
     /**
      * todo - return new instances  instead of the same instance. This requires the creation of new configuration options.
      * @param gadgetType
      * @returns {any}
      */
-
-    static getComponentType(gadgetType): any {
-
+    static getComponentType(gadgetType: string): any {
         switch (gadgetType) {
-
             case 'DonutGadgetComponent':
                 return DonutGadgetComponent;
             case 'CPUGadgetComponent':
@@ -61,21 +51,18 @@ export class GadgetFactory {
                 return EdgeServiceListGadgetComponent;
             case 'CPUMGadgetComponent':
                 return CPUMGadgetComponent;
-            case 'PortConnectionGadgetComponent':
-                return PortConnectionGadgetComponent;
             case 'StorageObjectListComponent':
                 return StorageObjectListComponent;
-            case 'TodoGadgetComponent': // todo gadget
+            case 'TodoGadgetComponent':
                 return TodoGadgetComponent;
-            case 'BubbleGadgetComponent': // todo gadget
+            case 'BubbleGadgetComponent':
                 return BubbleGadgetComponent;
-            case 'BarChartGadgetComponent': // todo gadget
+            case 'BarChartGadgetComponent':
                 return BarChartGadgetComponent;
-            case 'PieChartGadgetComponent': // todo gadget
+            case 'PieChartGadgetComponent':
                 return PieChartGadgetComponent;
             default:
-                return null;// todo add default gadget that would be displayed. Useful for troubleshooting new gadget dev
-
+                return null; // todo add default gadget that would be displayed. Useful for troubleshooting new gadget dev
         }
     }
 }

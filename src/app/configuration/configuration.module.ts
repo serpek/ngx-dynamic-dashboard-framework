@@ -17,9 +17,9 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AIConfigurationTabComponent} from './tab-artificial-intelligence/ai-configuration-tab.component';
-import {OptionsConfigurationTabComponent} from "./tab-options/options-configuration-tab.component";
-import {ConfigurationComponent} from "./configuration-component";
-import {OptionsService} from "./tab-options/service";
+import {OptionsConfigurationTabComponent} from './tab-options/options-configuration-tab.component';
+import {ConfigurationComponent} from './configuration-component';
+import {OptionsService} from './tab-options/service';
 
 @NgModule({
     imports: [

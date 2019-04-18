@@ -5,10 +5,11 @@ import {GadgetPropertyService} from '../_common/gadget-property.service';
 import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service';
 import {GadgetBase} from '../_common/gadget-base';
 import {PieChartService} from './service';
-import {OptionsService} from "../../configuration/tab-options/service";
-import {startWith, switchMap} from "rxjs/operators";
-import {interval} from "rxjs";
-import {ConfigurationService} from "../../services/configuration.service";
+import {OptionsService} from '../../configuration/tab-options/service';
+import {startWith, switchMap} from 'rxjs/operators';
+import {interval} from 'rxjs';
+import {ConfigurationService} from '../../services/configuration.service';
+
 declare var jQuery: any;
 
 @Component({
@@ -21,7 +22,7 @@ declare var jQuery: any;
 export class PieChartGadgetComponent extends GadgetBase {
 
     @ViewChild('chartOptionsSideBar_tag') chartOptionsSideBarRef: ElementRef;
-    chartOptionsSideBar:any;
+    chartOptionsSideBar: any;
 
     // chart options
     explodeSlices: boolean;
@@ -29,11 +30,11 @@ export class PieChartGadgetComponent extends GadgetBase {
     gradient: boolean;
     showLegend: boolean;
     showLabels: boolean;
-    legendTitle = "Title";
+    legendTitle = 'Title';
 
     view: any[];
     colorScheme: any = {
-        domain: ['#0d5481', '#0AFF16', '#4894FF','#F54B7D'] //todo - control color from property page
+        domain: ['#0d5481', '#0AFF16', '#4894FF', '#F54B7D'] // todo - control color from property page
     };
     //////////////////
 
@@ -127,7 +128,7 @@ export class PieChartGadgetComponent extends GadgetBase {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
-        const data = [];
+        const data: any[] = [];
         Object.assign(this, {data});
         this.setStopState(false);
 
@@ -135,41 +136,20 @@ export class PieChartGadgetComponent extends GadgetBase {
 
     public updateData(someData: any[]) {
         this.data.length = 0;
-
         /**
          * poll every 15 seconds
          * todo - change this to a websocket
          */
         this.subscription = interval(this.POLL_INTERVAL).pipe(
             startWith(0), switchMap(() => this._pieChartService.getData(this.endpointObject.address)))
-            .subscribe(data => {
-
+            .subscribe((data: any) => {
                     Object.assign(this, {data});
                 },
                 error => this.handleError(error));
     }
 
-    public drillDown(data) {
+    public drillDown(data: any) {
         // this._route.navigate(['/detail'], {});
-    }
-
-
-    private setInternalProperties(updatedPropsObject: any) {
-
-        this.state = updatedPropsObject.state;
-
-        if (updatedPropsObject.title != undefined) {
-
-            this.title = updatedPropsObject.title;
-            this.explodeSlices = updatedPropsObject.explodeSlices;
-            this.showDonut = updatedPropsObject.showDonut;
-            this.gradient = updatedPropsObject.gradient;
-            this.showLegend = updatedPropsObject.showLegend;
-            this.showLabels = updatedPropsObject.showLabels;
-
-            this.setEndPoint(updatedPropsObject.endpoint);
-            this.showOperationControls = true;
-        }
     }
 
     /**
@@ -217,30 +197,8 @@ export class PieChartGadgetComponent extends GadgetBase {
         this.stopWithoutStateSave();
     }
 
-
-    /**
-     * todo - need to improve how internal state is saved to persistant store
-     */
-    private persistTheChangeInInternalState() {
-        let payLoad =
-            "{\"instanceId\":" + this.instanceId
-            + ",\"title\":\"" + this.title
-            + "\",\"state\":\"" + this.state
-            + "\",\"endpoint\":\"" + this.endpointObject.name
-            + "\",\"explodeSlices\":" + this.explodeSlices
-            + ",\"showDonut\":"  + this.showDonut
-            + ",\"gradient\":" + this.gradient
-            + ",\"showLegend\":" + this.showLegend
-            + ",\"showLabels\":" + this.showLabels
-            + "}";
-
-        this._configService.notifyGadgetOnPropertyChange(payLoad, this.instanceId);
-
-    }
-
     toggleChartProperties() {
-
-        if(this.globalOptions.displayGadgetOptionsInSideBar == false){
+        if (this.globalOptions.displayGadgetOptionsInSideBar == false) {
             this.toggleConfigMode();
             return;
         }
@@ -250,4 +208,42 @@ export class PieChartGadgetComponent extends GadgetBase {
 
     }
 
+
+    private setInternalProperties(updatedPropsObject: any) {
+
+        this.state = updatedPropsObject.state;
+
+        if (updatedPropsObject.title != undefined) {
+
+            this.title = updatedPropsObject.title;
+            this.explodeSlices = updatedPropsObject.explodeSlices;
+            this.showDonut = updatedPropsObject.showDonut;
+            this.gradient = updatedPropsObject.gradient;
+            this.showLegend = updatedPropsObject.showLegend;
+            this.showLabels = updatedPropsObject.showLabels;
+
+            this.setEndPoint(updatedPropsObject.endpoint);
+            this.showOperationControls = true;
+        }
+    }
+
+
+    /**
+     * todo - need to improve how internal state is saved to persistant store
+     */
+    private persistTheChangeInInternalState() {
+        const payLoad =
+            '{"instanceId":' + this.instanceId
+            + ',"title":"' + this.title
+            + '","state":"' + this.state
+            + '","endpoint":"' + this.endpointObject.name
+            + '","explodeSlices":' + this.explodeSlices
+            + ',"showDonut":' + this.showDonut
+            + ',"gradient":' + this.gradient
+            + ',"showLegend":' + this.showLegend
+            + ',"showLabels":' + this.showLabels
+            + '}';
+
+        this._configService.notifyGadgetOnPropertyChange(payLoad, this.instanceId);
+    }
 }

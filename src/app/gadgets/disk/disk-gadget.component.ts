@@ -12,8 +12,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetPropertyService} from '../_common/gadget-property.service';
 import {GadgetBase} from '../_common/gadget-base';
 import {DiskService} from './service';
-import {OptionsService} from "../../configuration/tab-options/service";
-
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -21,7 +20,6 @@ import {OptionsService} from "../../configuration/tab-options/service";
     templateUrl: './view.html',
     styleUrls: ['../_common/styles-gadget.css'],
     animations: [
-
         trigger('accordion', [
             state('in', style({
                 height: '*'
@@ -47,26 +45,19 @@ import {OptionsService} from "../../configuration/tab-options/service";
     ]
 })
 export class DiskGadgetComponent extends GadgetBase {
-
     topic: any;
-
     showOperationControls = false;
-
     data: any;
-
     threshold: string;
-
     badColorScheme = {
         domain: ['#a10910', '#DDDDDD']
     };
     goodColorScheme = {
         domain: ['#00c700', '#DDDDDD']
     };
-    used;
-    avail;
-
+    used: any;
+    avail: any;
     detailMenuOpen: string;
-
     colorScheme = this.goodColorScheme;
 
     constructor(protected _runtimeService: RuntimeService,
@@ -89,12 +80,9 @@ export class DiskGadgetComponent extends GadgetBase {
 
 
     public preRun(): void {
-
         this.threshold = this.getPropFromPropertyPages('threshold');
         this.detailMenuOpen = 'out';
-
     }
-
 
     public run() {
         this.data = [];
@@ -107,27 +95,21 @@ export class DiskGadgetComponent extends GadgetBase {
     }
 
     public updateData(data: any[]) {
-
-        this._diskService.getMockData().subscribe(_data => {
+        this._diskService.getMockData().subscribe((_data: any) => {
                 this.data = _data;
-
                 const thresholdVal = Number(this.threshold);
-
                 if (this.data[0].value < thresholdVal) {
                     this.colorScheme = this.goodColorScheme;
                 } else {
                     this.colorScheme = this.badColorScheme;
                 }
-
                 this.used = this.data[0].value;
                 this.avail = this.data[1].value;
-
             },
             error => this.handleError(error));
     }
 
     public updateProperties(updatedProperties: any) {
-
         /**
          * todo
          *  A similar operation exists on the procmman-config-service
@@ -137,43 +119,31 @@ export class DiskGadgetComponent extends GadgetBase {
          *  config service or the property page service.
          *
          * **/
-
         const updatedPropsObject = JSON.parse(updatedProperties);
-
-        this.propertyPages.forEach(function (propertyPage) {
-
-
+        this.propertyPages.forEach((propertyPage: any) => {
             for (let x = 0; x < propertyPage.properties.length; x++) {
-
                 for (const prop in updatedPropsObject) {
                     if (updatedPropsObject.hasOwnProperty(prop)) {
                         if (prop === propertyPage.properties[x].key) {
                             propertyPage.properties[x].value = updatedPropsObject[prop];
                         }
-
                     }
                 }
             }
         });
-
         this.threshold = updatedPropsObject.threshold;
         this.title = updatedPropsObject.title;
         this.setEndPoint(updatedPropsObject.endpoint);
-
         this.run();
-
-
     }
+
     setTopic() {
         this._diskService.getHelpTopic().subscribe(data => {
-
             this.topic = data;
-
         });
     }
+
     toggleAcordion(): void {
-
         this.detailMenuOpen = this.detailMenuOpen === 'out' ? 'in' : 'out';
-
     }
 }

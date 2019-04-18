@@ -5,18 +5,22 @@
 
 export const environment = {
     production: false,
-    productName: "Dynamic Dashboard Framework",
-    productVersion: "0.0.5",
-    menu:{
-        documentation:true,
+    productName: 'Dynamic Dashboard Framework',
+    productVersion: '0.0.5',
+    menu: {
+        documentation: true,
         aiSearch: true,
-        notification:true
+        notification: true
     },
-    boardConfiguration:{
-        board:true,
-        ai:true,
-        endpoint:true
-    }
+    boardConfiguration: {
+        board: true,
+        ai: true,
+        endpoint: true
+    },
+    serverUrl: '',
+    defaultLanguage: 'en-US',
+    supportedLanguages: [
+        'en-US',
+        'fr-FR'
+    ]
 };
-
-

@@ -4,18 +4,15 @@ import {NgModule} from '@angular/core';
 import {TypeAheadInputComponent} from './typeahead-input.component';
 import {FormsModule} from '@angular/forms';
 
-
 @NgModule({
     imports: [
         CommonModule,
         FormsModule
-
     ],
     declarations: [
         TypeAheadInputComponent
     ],
-    providers: [
-    ],
+    providers: [],
     exports: [
         TypeAheadInputComponent
     ]
