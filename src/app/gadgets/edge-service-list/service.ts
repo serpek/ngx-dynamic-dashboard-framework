@@ -53,7 +53,7 @@ export class EdgeService {
     }
 
     getGraphInfo() {
-        return this._http.get('/assets/api/disk-model.json')
+        return this._http.get('disk-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

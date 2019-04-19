@@ -14,7 +14,7 @@ export class BubbleService {
     }
 
     getMockData() {
-        return this._http.get('/assets/api/chart-mock-bubble-model.json')
+        return this._http.get('chart-mock-bubble-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

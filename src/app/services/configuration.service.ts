@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {EMPTY, Observable} from 'rxjs';
-import {defaultBoard} from './configuration-sample-default-board';
-import {sampleBoardCollectionProd} from './configuration-sample-boards-prod.model';
-import {sampleBoardCollection} from './configuration-sample-boards.model';
 import {environment} from '../../environments/environment';
+import {Board, IBoard} from '@app/models/Board';
+import {Logger} from '@app/core';
+import {OperationTypes} from '@app/models/operations.enum';
+
+const log = new Logger('ConfigurationService');
 
 @Injectable()
 export class ConfigurationService {
@@ -13,22 +15,51 @@ export class ConfigurationService {
     demo = true;
     env: any;
 
-    defaultBoard: any;
-    sampleBoardCollection: any;
-    sampleBoardCollectionProd: any;
-
-    /**
-     * todo - fix this hard coded store
-     * @type {string}
-     */
-    remoteConfigurationRepository = '';
+    remoteConfigurationRepository = '/boards';
 
     constructor(private _http: HttpClient) {
-        Object.assign(this, {defaultBoard});
-        Object.assign(this, {sampleBoardCollection});
-        Object.assign(this, {sampleBoardCollectionProd});
         this.env = environment;
-        this.seedLocalStorageWithSampleBoardCollection();
+    }
+
+    public getBoardById(id: number): Observable<IBoard> {
+        log.debug('getBoardById', id);
+        return this._http.get<IBoard>(`${this.remoteConfigurationRepository}/${id}`);
+    }
+
+    public getBoards(): Observable<IBoard[]> {
+        log.debug('getBoards');
+        return this._http.get<IBoard[]>(`${this.remoteConfigurationRepository}`);
+    }
+
+    public saveBoard(board: IBoard, operation: OperationTypes) {
+        log.debug('saveBoard');
+        this.model = board;
+        if (Object.keys(board).length === 0 && board.constructor === Object) {
+            return EMPTY;
+        }
+
+        delete board._id;
+        if (operation === OperationTypes.InitNewBoard) {
+            return this._http.post(`${this.remoteConfigurationRepository}`, JSON.stringify(board));
+        } else {
+            return this._http.put(`${this.remoteConfigurationRepository}`, JSON.stringify(board));
+        }
+    }
+
+    public deleteBoard(board: IBoard) {
+        log.debug('deleteBoard');
+        return this._http.delete(`${this.remoteConfigurationRepository}/${board.id}`, {
+            observe: 'body'
+        });
+    }
+
+    public getDefaultBoard(): Observable<IBoard> {
+        log.debug('getDefaultBoard');
+        return new Observable(observer => {
+            observer.next(new Board());
+            return () => {
+            };
+        });
     }
 
     public getBoardByTitle(title: string) {
@@ -49,85 +80,6 @@ export class ConfigurationService {
         } else {
             return this._http.get(this.remoteConfigurationRepository + '/' + name);
         }
-    }
-
-    public getBoards() {
-        if (this.demo) {
-            return new Observable(observer => {
-                let data = JSON.parse(localStorage.getItem('board'));
-                if (!data) {
-                    data = {board: []};
-                }
-                observer.next(data.board);
-                return () => {
-                };
-            });
-        } else {
-            /**
-             * todo - this call is based on an internal representation (admin console) of something called a store.
-             * That concept requires refactoring.
-             */
-            return this._http.get(this.remoteConfigurationRepository);
-        }
-    }
-
-    public saveBoard(board: any) {
-        this.model = board;
-        if (Object.keys(board).length === 0 && board.constructor === Object) {
-            return EMPTY;
-        }
-
-        if (this.demo) {
-            return new Observable(observer => {
-                let board_collection;
-                // find and remove board from storage
-                this.deleteBoardFromLocalStore(board.title);
-                // get a collection object and add board to it
-                if ((board_collection = JSON.parse(localStorage.getItem('board'))) == null) {
-                    board_collection = {
-                        board: []
-                    };
-                }
-                board_collection['board'].push(board);
-                // save
-                localStorage.setItem('board', JSON.stringify(board_collection));
-                observer.next({});
-                return () => {
-                };
-            });
-        } else {
-            /**
-             * todo - a delete must happen here
-             *
-             */
-            const httpOptions = {
-                headers: new HttpHeaders({
-                    'Content-Type': 'application/json'
-                })
-            };
-            return this._http.post(this.remoteConfigurationRepository + '?id=' + board.title, JSON.stringify(board), httpOptions);
-        }
-    }
-
-    public deleteBoard(boardTitle: string) {
-        if (this.demo) {
-            return new Observable(observer => {
-                this.deleteBoardFromLocalStore(boardTitle);
-                observer.next({});
-                return () => {
-                };
-            });
-        } else {
-            return this._http.delete(this.remoteConfigurationRepository + '/' + boardTitle);
-        }
-    }
-
-    public getDefaultBoard() {
-        return new Observable(observer => {
-            observer.next(this.defaultBoard);
-            return () => {
-            };
-        });
     }
 
     /*
@@ -156,7 +108,7 @@ export class ConfigurationService {
             });
         });
 
-        this.saveBoard(this.currentModel).subscribe((result: any) => {
+        this.saveBoard(this.currentModel, OperationTypes.GadgetUpdate).subscribe((result: any) => {
                 /**
                  * todo - create popup/toast to show configuration saved message
                  */
@@ -180,32 +132,6 @@ export class ConfigurationService {
                     }
                 }
             });
-        }
-    }
-
-    private seedLocalStorageWithSampleBoardCollection() {
-        if (localStorage.getItem('board') === null) {
-            if (this.env.production === true) {
-                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollectionProd));
-            } else {
-                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollection));
-            }
-        }
-    }
-
-    private delete(board_collection: any) {
-        localStorage.removeItem('board');
-        localStorage.setItem('board', JSON.stringify(board_collection));
-    }
-
-    private deleteBoardFromLocalStore(boardTitle: string) {
-        const board_collection = JSON.parse(localStorage.getItem('board'));
-        let index;
-        if (board_collection && (index = board_collection['board'].findIndex((item: any) => {
-            return item.title === boardTitle;
-        })) >= 0) {
-            board_collection['board'].splice(index, 1);
-            this.delete(board_collection);
         }
     }
 }

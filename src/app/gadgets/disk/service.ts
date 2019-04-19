@@ -16,7 +16,7 @@ export class DiskService {
     }
 
     get() {
-        return this._http.get('/assets/api/disk-model.json')
+        return this._http.get('disk-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );
@@ -24,7 +24,7 @@ export class DiskService {
 
     getHelpTopic() {
 
-        return this._http.get('/assets/api/disk-help-model.json') .pipe(
+        return this._http.get('disk-help-model') .pipe(
             catchError(RuntimeService.handleError)
         );
     }

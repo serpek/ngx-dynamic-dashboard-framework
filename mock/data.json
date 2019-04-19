@@ -1,0 +1,4594 @@
+{
+  "boards": [
+    {
+      "title": "Board Sample 1",
+      "structure": "3-6-3",
+      "id": 9,
+      "boardInstanceId": 1,
+      "rows": [
+        {
+          "columns": [
+            {
+              "styleClass": "three wide",
+              "gadgets": [
+                {
+                  "cols": 2,
+                  "rows": 1,
+                  "y": 0,
+                  "x": 0,
+                  "componentType": "NewsGadgetComponent",
+                  "name": "News",
+                  "description": "What's new",
+                  "icon": "images/news.png",
+                  "instanceId": 1500253814523,
+                  "tags": [
+                    {
+                      "facet": "Informational",
+                      "name": "news"
+                    },
+                    {
+                      "facet": "List",
+                      "name": "news"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "news",
+                            "key": "endpoint",
+                            "label": "News URL",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "News",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "six wide",
+              "gadgets": [
+                {
+                  "cols": 2,
+                  "rows": 2,
+                  "y": 0,
+                  "x": 2,
+                  "componentType": "CPUGadgetComponent",
+                  "name": "CPU Chart",
+                  "description": "Monitors CPU utilization for CDM.",
+                  "icon": "images/cpu.png",
+                  "instanceId": 1499912922910,
+                  "tags": [
+                    {
+                      "facet": "Performance",
+                      "name": "real-time"
+                    },
+                    {
+                      "facet": "Chart",
+                      "name": "bar"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "CPU Utilization",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": 999,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "three wide",
+              "gadgets": [
+                {
+                  "cols": 1,
+                  "rows": 1,
+                  "y": 0,
+                  "x": 4,
+                  "componentType": "TrendGadgetComponent",
+                  "name": "Trend",
+                  "description": "General trends.",
+                  "icon": "images/trend.png",
+                  "instanceId": 1499912901569,
+                  "tags": [
+                    {
+                      "facet": "Performance",
+                      "name": "trend"
+                    },
+                    {
+                      "facet": "Chart",
+                      "name": "area"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Devappliance - ECX",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Trend",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Board Sample 2",
+      "structure": "4-4-4-4/8-4-4",
+      "id": 8,
+      "boardInstanceId": 2,
+      "rows": [
+        {
+          "columns": [
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "cols": 3,
+                  "rows": 2,
+                  "y": 1,
+                  "x": 4,
+                  "componentType": "StatisticGadgetComponent",
+                  "name": "Statistic",
+                  "description": "General statistic.",
+                  "icon": "images/statistic.png",
+                  "instanceId": 1499912861630,
+                  "tags": [
+                    {
+                      "facet": "Statistic",
+                      "name": "counter"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "database",
+                            "key": "resource",
+                            "label": "Resource",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "vm",
+                                "value": "vm"
+                              },
+                              {
+                                "key": "database",
+                                "value": "database"
+                              },
+                              {
+                                "key": "volume",
+                                "value": "volume"
+                              },
+                              {
+                                "key": "job",
+                                "value": "job"
+                              }
+                            ]
+                          },
+                          {
+                            "value": "Devappliance - ECX",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Statistic",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": true,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "componentType": "StatisticGadgetComponent",
+                  "name": "Statistic",
+                  "description": "General statistic.",
+                  "icon": "images/statistic.png",
+                  "instanceId": 1499912845375,
+                  "tags": [
+                    {
+                      "facet": "Statistic",
+                      "name": "counter"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "vm",
+                            "key": "resource",
+                            "label": "Resource",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "vm",
+                                "value": "vm"
+                              },
+                              {
+                                "key": "database",
+                                "value": "database"
+                              },
+                              {
+                                "key": "volume",
+                                "value": "volume"
+                              },
+                              {
+                                "key": "job",
+                                "value": "job"
+                              }
+                            ]
+                          },
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Statistic",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": true,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "componentType": "StatisticGadgetComponent",
+                  "name": "Statistic",
+                  "description": "General statistic.",
+                  "icon": "images/statistic.png",
+                  "instanceId": 1500251223835,
+                  "tags": [
+                    {
+                      "facet": "Statistic",
+                      "name": "counter"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "volume",
+                            "key": "resource",
+                            "label": "Resource",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "vm",
+                                "value": "vm"
+                              },
+                              {
+                                "key": "database",
+                                "value": "database"
+                              },
+                              {
+                                "key": "volume",
+                                "value": "volume"
+                              },
+                              {
+                                "key": "job",
+                                "value": "job"
+                              }
+                            ]
+                          },
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Statistic",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": true,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "componentType": "StatisticGadgetComponent",
+                  "name": "Statistic",
+                  "description": "General statistic.",
+                  "icon": "images/statistic.png",
+                  "instanceId": 1500251241829,
+                  "tags": [
+                    {
+                      "facet": "Statistic",
+                      "name": "counter"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "job",
+                            "key": "resource",
+                            "label": "Resource",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "vm",
+                                "value": "vm"
+                              },
+                              {
+                                "key": "database",
+                                "value": "database"
+                              },
+                              {
+                                "key": "volume",
+                                "value": "volume"
+                              },
+                              {
+                                "key": "job",
+                                "value": "job"
+                              }
+                            ]
+                          },
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Statistic",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": true,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columns": [
+            {
+              "styleClass": "eight wide",
+              "gadgets": [
+                {
+                  "componentType": "TrendLineGadgetComponent",
+                  "name": "Realtime Performance",
+                  "description": "IOPs and Network Bandwidth.",
+                  "icon": "images/trend-line.png",
+                  "instanceId": 1500251340757,
+                  "tags": [
+                    {
+                      "facet": "Performance",
+                      "name": "trend"
+                    },
+                    {
+                      "facet": "Chart",
+                      "name": "line"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Devappliance - ECX",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Performance",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "componentType": "ServiceListGadgetComponent",
+                  "name": "Service Status",
+                  "description": "Monitors Service Status",
+                  "icon": "images/service.png",
+                  "instanceId": 1500343727872,
+                  "tags": [
+                    {
+                      "facet": "List",
+                      "name": "health"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Devappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Service Status",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 999,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "List",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "componentType": "DiskGadgetComponent",
+                  "name": "Disk Utilization",
+                  "description": "Disk consumption information for ECX.",
+                  "icon": "images/donut.png",
+                  "instanceId": 1500253741130,
+                  "tags": [
+                    {
+                      "facet": "Chart",
+                      "name": "pie"
+                    },
+                    {
+                      "facet": "Performance",
+                      "name": "storage"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Disk Consumption",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 50,
+                            "key": "threshold",
+                            "label": "Consumed Threshold",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": "g3g3egegre",
+                            "key": "diskid",
+                            "label": "Disk Id",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "2344112gdfgdfg",
+                                "value": "2344112gdfgdfg"
+                              },
+                              {
+                                "key": "g3g3egegre",
+                                "value": "g3g3egegre"
+                              },
+                              {
+                                "key": "8435f34",
+                                "value": "8435f34"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Thresholds",
+                        "groupId": "threshold",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": 30,
+                            "key": "frequency",
+                            "label": "Frequency",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": 30,
+                            "key": "retentionH",
+                            "label": "Retention High",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": 180,
+                            "key": "retentionL",
+                            "label": "Retention Low",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "number"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "styleClass": "four wide",
+              "gadgets": [
+                {
+                  "componentType": "DiskGadgetComponent",
+                  "name": "Disk Utilization",
+                  "description": "Disk consumption information for ECX.",
+                  "icon": "images/donut.png",
+                  "instanceId": 1500252483066,
+                  "tags": [
+                    {
+                      "facet": "Chart",
+                      "name": "pie"
+                    },
+                    {
+                      "facet": "Performance",
+                      "name": "storage"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Disk Consumption",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 50,
+                            "key": "threshold",
+                            "label": "Consumed Threshold",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": "g3g3egegre",
+                            "key": "diskid",
+                            "label": "Disk Id",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dropdown",
+                            "options": [
+                              {
+                                "key": "2344112gdfgdfg",
+                                "value": "2344112gdfgdfg"
+                              },
+                              {
+                                "key": "g3g3egegre",
+                                "value": "g3g3egegre"
+                              },
+                              {
+                                "key": "8435f34",
+                                "value": "8435f34"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Thresholds",
+                        "groupId": "threshold",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": 30,
+                            "key": "frequency",
+                            "label": "Frequency",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": 30,
+                            "key": "retentionH",
+                            "label": "Retention High",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "number"
+                          },
+                          {
+                            "value": 180,
+                            "key": "retentionL",
+                            "label": "Retention Low",
+                            "required": false,
+                            "order": 4,
+                            "controlType": "number"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "componentType": "TrendGadgetComponent",
+                  "name": "Trend",
+                  "description": "General trends.",
+                  "icon": "images/trend.png",
+                  "instanceId": 1500252536414,
+                  "tags": [
+                    {
+                      "facet": "Performance",
+                      "name": "trend"
+                    },
+                    {
+                      "facet": "Chart",
+                      "name": "area"
+                    }
+                  ],
+                  "config": {
+                    "propertyPages": [
+                      {
+                        "displayName": "Run",
+                        "groupId": "run",
+                        "position": 10,
+                        "properties": [
+                          {
+                            "value": "Carlosappliance - Process Monitor",
+                            "key": "endpoint",
+                            "label": "API Endpoints",
+                            "required": false,
+                            "order": 2,
+                            "controlType": "dynamicdropdown"
+                          },
+                          {
+                            "value": "Trend",
+                            "key": "title",
+                            "label": "Title",
+                            "required": false,
+                            "order": 1,
+                            "controlType": "textbox"
+                          },
+                          {
+                            "value": 2,
+                            "key": "instanceId",
+                            "required": false,
+                            "order": -1,
+                            "controlType": "hidden"
+                          }
+                        ]
+                      },
+                      {
+                        "displayName": "Chart",
+                        "groupId": "chart",
+                        "position": 11,
+                        "properties": [
+                          {
+                            "value": true,
+                            "key": "chart_properties",
+                            "label": "Show chart details",
+                            "required": false,
+                            "order": 3,
+                            "controlType": "checkbox"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gadgets": [
+    {
+      "componentType": "BarChartGadgetComponent",
+      "name": "Bar Chart",
+      "description": "Bar Char",
+      "icon": "assets/images/cpu.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Chart",
+          "name": "metric"
+        },
+        {
+          "facet": "Chart",
+          "name": "bar"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Bar Chart Data",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "hidden",
+                "key": "state",
+                "label": "",
+                "value": "stop",
+                "required": true,
+                "order": -1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -2
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "dropdown",
+                "type": "dropdown",
+                "key": "barChartType",
+                "label": "Bar Chart Type",
+                "value": "normalizedHorizontal",
+                "required": true,
+                "order": 1,
+                "options": [
+                  {
+                    "key": "Normalized Horizontal",
+                    "value": "normalizedHorizontal"
+                  },
+                  {
+                    "key": "Normalized Vertical",
+                    "value": "normalizedVertical"
+                  },
+                  {
+                    "key": "Stacked Horizontal",
+                    "value": "stackedHorizontal"
+                  },
+                  {
+                    "key": "Stacked Vertical",
+                    "value": "stackedVertical"
+                  }
+                ]
+              },
+              {
+                "controlType": "textbox",
+                "key": "yAxisLabel",
+                "label": "Y Axis Label",
+                "value": "",
+                "required": false,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "xAxisLabel",
+                "label": "X Axis Label",
+                "value": "",
+                "required": false,
+                "order": 3
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "gradient",
+                "label": "Show colors in gradient",
+                "value": true,
+                "required": true,
+                "order": 4
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showDataLabel",
+                "label": "Show data label",
+                "value": true,
+                "required": false,
+                "order": 5
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showXAxis",
+                "label": "Show x axis",
+                "value": true,
+                "required": false,
+                "order": 6
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showYAxis",
+                "label": "Show y axis",
+                "value": true,
+                "required": false,
+                "order": 7
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showLegend",
+                "label": "Show chart legend",
+                "value": true,
+                "required": false,
+                "order": 8
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showXAxisLabel",
+                "label": "Show x axis label",
+                "value": true,
+                "required": false,
+                "order": 9
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showYAxisLabel",
+                "label": "Show y axis label",
+                "value": false,
+                "required": false,
+                "order": 10
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "PieChartGadgetComponent",
+      "name": "Pie Chart",
+      "description": "Pie Chart",
+      "icon": "assets/images/pie.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Chart",
+          "name": "metric"
+        },
+        {
+          "facet": "Chart",
+          "name": "pie"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Pie Chart",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              },
+              {
+                "controlType": "hidden",
+                "key": "state",
+                "label": "",
+                "value": "stop",
+                "required": true,
+                "order": -2
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "explodeSlices",
+                "label": "Explode slices",
+                "value": true,
+                "required": false,
+                "order": 1
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showDonut",
+                "label": "Show donut",
+                "value": true,
+                "required": false,
+                "order": 2
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "gradient",
+                "label": "Show colors in gradient",
+                "value": true,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showLegend",
+                "label": "Show chart legend",
+                "value": true,
+                "required": false,
+                "order": 4
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showLabels",
+                "label": "Show labels",
+                "value": true,
+                "required": false,
+                "order": 5
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "BubbleGadgetComponent",
+      "name": "Bubble",
+      "description": "Bubble Gadget",
+      "icon": "assets/images/bubble.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Bubble",
+          "name": "bubble"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Bubble",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": false,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "StorageObjectListComponent",
+      "name": "Storage Information",
+      "description": "Provides a storage view.",
+      "icon": "assets/images/volume.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Informational",
+          "name": "storage"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Data Source",
+                "value": "vSnap",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Storage - Volume Analysis",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "CPUMGadgetComponent",
+      "name": "CPUM Chart",
+      "description": "Monitors CPU utilization.",
+      "icon": "assets/images/cpu.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Performance",
+          "name": "real-time"
+        },
+        {
+          "facet": "Chart",
+          "name": "bar"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "EXP CPU Monitor utilization",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Threshold",
+            "groupId": "alert",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "number",
+                "key": "cpuErrorThreshold",
+                "label": "Utilization Error Threshold (%)",
+                "value": 90,
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "number",
+                "key": "cpuWarningThreshold",
+                "label": "Utilization Warning Threshold (%)",
+                "value": 75,
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "number",
+                "key": "cpuThresholdTime",
+                "label": "Maximum Exceed Threshold Time (minutes)",
+                "value": 10,
+                "required": true,
+                "order": 3
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "type": "textbox",
+                "key": "orientation",
+                "label": "Orientation",
+                "value": "horizontal",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "xAxis",
+                "label": "Show X Axis",
+                "value": true,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "yAxis",
+                "label": "Show Y Axis",
+                "value": true,
+                "required": true,
+                "order": 4
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "legend",
+                "label": "Show Legend",
+                "value": true,
+                "required": true,
+                "order": 5
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "gradient",
+                "label": "Use Gradient",
+                "value": true,
+                "required": true,
+                "order": 6
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showGridLines",
+                "label": "Show Grid Lines",
+                "value": true,
+                "required": true,
+                "order": 7
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showXAxisLabel",
+                "label": "Show X Axis Label",
+                "value": true,
+                "required": true,
+                "order": 8
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "showYAxisLabel",
+                "label": "Show Y Axis Label",
+                "value": true,
+                "required": true,
+                "order": 9
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "EdgeServiceListGadgetComponent",
+      "name": "Edge Service Status",
+      "description": "Monitors edge service status",
+      "icon": "assets/images/edge-service.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "List",
+          "name": "health"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "Carlosappliance",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Proxy service status",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "List",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "TrendGadgetComponent",
+      "name": "Trend",
+      "description": "General trends.",
+      "icon": "assets/images/trend.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Performance",
+          "name": "trend"
+        },
+        {
+          "facet": "Chart",
+          "name": "area"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Trend",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "TrendLineGadgetComponent",
+      "name": "Realtime Performance",
+      "description": "Monitors IOPs and network bandwidth.",
+      "icon": "assets/images/trend-line.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Performance",
+          "name": "trend"
+        },
+        {
+          "facet": "Chart",
+          "name": "line"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Performance",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "CPUGadgetComponent",
+      "name": "CPU Chart",
+      "description": "Monitors CPU utilization.",
+      "icon": "assets/images/cpu.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Performance",
+          "name": "real-time"
+        },
+        {
+          "facet": "Chart",
+          "name": "bar"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "CPU utilization",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "MemoryGadgetComponent",
+      "name": "Memory Chart",
+      "description": "Monitors memory utilization",
+      "icon": "assets/images/memory.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Performance",
+          "name": "real-time"
+        },
+        {
+          "facet": "Chart",
+          "name": "gauge"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Memory Utilization",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "ServiceListGadgetComponent",
+      "name": "Service Status",
+      "description": "Monitors service status",
+      "icon": "assets/images/service.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "List",
+          "name": "health"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Data Source",
+                "value": "",
+                "required": true,
+                "order": 2
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Service Status",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "List",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "PropertyListGadgetComponent",
+      "name": "Tuning Parameters",
+      "description": "System related tuning parameters.",
+      "icon": "assets/images/property.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "List",
+          "name": "tuning"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Tuning",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 999,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "CPU Utilization",
+                "required": true,
+                "order": 1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "DiskGadgetComponent",
+      "name": "Disk Utilization",
+      "description": "Disk consumption information.",
+      "icon": "assets/images/donut.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Chart",
+          "name": "pie"
+        },
+        {
+          "facet": "Performance",
+          "name": "storage"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 4
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Disk Consumption",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "number",
+                "key": "threshold",
+                "label": "Consumed Threshold",
+                "value": 50,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "dropdown",
+                "key": "diskid",
+                "label": "Disk Id",
+                "value": "",
+                "required": true,
+                "order": 2,
+                "options": [
+                  {
+                    "key": "2344112gdfgdfg",
+                    "value": "2344112gdfgdfg"
+                  },
+                  {
+                    "key": "g3g3egegre",
+                    "value": "g3g3egegre"
+                  },
+                  {
+                    "key": "8435f34",
+                    "value": "8435f34"
+                  }
+                ]
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Thresholds",
+            "groupId": "threshold",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "number",
+                "key": "frequency",
+                "label": "Frequency",
+                "value": 30,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "number",
+                "key": "retentionH",
+                "label": "Retention High",
+                "value": 30,
+                "required": true,
+                "order": 4
+              },
+              {
+                "controlType": "number",
+                "key": "retentionL",
+                "label": "Retention Low",
+                "value": 180,
+                "required": true,
+                "order": 4
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "DonutGadgetComponent",
+      "name": "Smart Protection",
+      "description": "Ai based protection.",
+      "icon": "assets/images/smart-protect.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Chart",
+          "name": "pie"
+        },
+        {
+          "facet": "Performance",
+          "name": "storage"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 4
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Smart Protection",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "number",
+                "key": "frequency",
+                "label": "Compliant Check Frequency",
+                "value": 50,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "auto",
+                "label": "Use AI to automate compliance",
+                "value": true,
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          },
+          {
+            "displayName": "Chart",
+            "groupId": "chart",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "checkbox",
+                "type": "checkbox",
+                "key": "chart_properties",
+                "label": "Show chart details",
+                "value": true,
+                "required": true,
+                "order": 3
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "StatisticGadgetComponent",
+      "name": "Statistic",
+      "description": "General statistic.",
+      "icon": "assets/images/statistic.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Statistic",
+          "name": "counter"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dropdown",
+                "key": "resource",
+                "label": "Resource",
+                "value": "vm",
+                "required": true,
+                "order": 2,
+                "options": [
+                  {
+                    "key": "vm",
+                    "value": "vm"
+                  },
+                  {
+                    "key": "database",
+                    "value": "database"
+                  },
+                  {
+                    "key": "volume",
+                    "value": "volume"
+                  },
+                  {
+                    "key": "job",
+                    "value": "job"
+                  }
+                ]
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Statistic",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": false,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "NewsGadgetComponent",
+      "name": "News",
+      "description": "What's new",
+      "icon": "assets/images/news.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Informational",
+          "name": "news"
+        },
+        {
+          "facet": "List",
+          "name": "news"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "News URL",
+                "value": "news",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "News",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "JobAnalysisGadgetComponent",
+      "name": "Job Analyzer",
+      "description": "Performs operation analysis.",
+      "icon": "assets/images/job-analysis.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Informational",
+          "name": "job"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Application URL",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Device URL",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Job Anaylyzer",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    },
+    {
+      "componentType": "TodoGadgetComponent",
+      "name": "Todo",
+      "description": "Todo Gadget",
+      "icon": "assets/images/todo.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Todo",
+          "name": "todo"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 11,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "Chart Data Source",
+                "value": "",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "Todo",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": false,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    }
+  ],
+  "version-model": [
+    {
+      "name": "metric 1",
+      "series": [
+        {
+          "name": "used",
+          "value": 75
+        },
+        {
+          "name": "available",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "name": "metric 2",
+      "series": [
+        {
+          "name": "used",
+          "value": 23
+        },
+        {
+          "name": "available",
+          "value": 77
+        }
+      ]
+    }
+  ],
+  "chart-mock-bar-model": [
+    {
+      "name": "metric 1",
+      "series": [
+
+        {
+          "name": "available",
+          "value": 25
+        },{
+          "name": "used",
+          "value": 75
+        }
+      ]
+    },
+    {
+      "name": "metric 2",
+      "series": [
+
+        {
+          "name": "available",
+          "value": 77
+        },{
+          "name": "used",
+          "value": 23
+        }
+
+      ]
+    }
+  ],
+  "chart-mock-bubble-model": [
+    {
+      "name": "Germany",
+      "series": [
+        {
+          "name": "2010",
+          "x": 40632,
+          "y": 80.3,
+          "r": 80.4
+        },
+        {
+          "name": "2000",
+          "x": 36953,
+          "y": 80.3,
+          "r": 78
+        },
+        {
+          "name": "1990",
+          "x": 31476,
+          "y": 75.4,
+          "r": 79
+        }
+      ]
+    },
+    {
+      "name": "USA",
+      "series": [
+        {
+          "name": "2010",
+          "x": 49737,
+          "y": 78.8,
+          "r": 310
+        },
+        {
+          "name": "2000",
+          "x": 45986,
+          "y": 76.9,
+          "r": 283
+        },
+        {
+          "name": "1990",
+          "x": 3706,
+          "y": 75.4,
+          "r": 253
+        }
+      ]
+    },
+    {
+      "name": "France",
+      "series": [
+        {
+          "name": "2010",
+          "x": 36745,
+          "y": 81.4,
+          "r": 63
+        },
+        {
+          "name": "2000",
+          "x": 34774,
+          "y": 79.1,
+          "r": 59.4
+        },
+        {
+          "name": "1990",
+          "x": 29476,
+          "y": 77.2,
+          "r": 56.9
+        }
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "series": [
+        {
+          "name": "2010",
+          "x": 36240,
+          "y": 80.2,
+          "r": 62.7
+        },
+        {
+          "name": "2000",
+          "x": 32543,
+          "y": 77.8,
+          "r": 58.9
+        },
+        {
+          "name": "1990",
+          "x": 26424,
+          "y": 75.7,
+          "r": 57.1
+        }
+      ]
+    }
+  ],
+  "chart-mock-pie-model": [
+    {
+      "name": "a",
+      "value": 45
+    },
+    {
+      "name": "b",
+      "value": 344
+    },
+    {
+      "name": "c",
+      "value": 75
+    },
+    {
+      "name": "d",
+      "value": 23
+    }
+
+  ],
+  "connection-model": [
+    {
+      "event": "unreachable",
+      "title": "Network is unreachable",
+      "summary": "The application failed to connect to the host due to inability to reach the host.",
+      "solution": [
+        {
+          "cause": "The target address may be IPV6.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Contact support to review this issue."
+            }
+          ]
+        },
+        {
+          "cause": "There may be a stale entry within the DNS server.",
+          "action": [
+            {
+              "id": 2,
+              "task": "You may want to contact your network administrator to see if the issue is related to a stale DNS entries."
+            }
+          ]
+        },
+        {
+          "cause": "General connectivity issue.",
+          "action": [
+            {
+              "id": 2,
+              "task": "Verify your network connections, proxies and firewalls."
+            }
+          ]
+        }
+      ]
+    },{
+      "event": "time-out",
+      "title": "Network request timed out",
+      "summary": "The application link was able to contact the remote application but could not establish a connection.",
+      "solution": [
+        {
+          "cause": "The remote application is in deadlock.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Check that the remote application is operational, by accessing it as usual from the browser."
+            }
+          ]
+        },
+        {
+          "cause": "There is a network connection problem.",
+          "action": [
+            {
+              "id": 2,
+              "task": "Use tools like ping, telnet or Wire Shark to check the connection to the remote machine. You may want to contact your network administrator."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "connection-refuse",
+      "title":"The remote application is not responding",
+      "summary": "The application was attempting to connect to the remote application but the connection was refused.",
+      "solution": [
+        {
+          "cause": "You may have the correct URL but the wrong Port.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Double check an make sure you are using the correct port if a port is required. Review the documentation that describes which ports are required to open."
+            }
+          ]
+        },
+        {
+          "cause": "The remote application is down.",
+          "action": [
+            {
+              "id": 2,
+              "task": "Check that the remote application is operational, by accessing it from the browser using the application URL (or the display URL if the remote application is behind a reverse proxy)."
+            },
+            {
+              "id": 3,
+              "task": "If the remote application is not accessible with the browser, ping the remote application URL from the local server – the remote application must be accessible using the application URL for the application link to work."
+            }
+          ]
+        },
+        {
+          "cause": "The application URL is mis-configured.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Does the application URL use the correct port? If you're using the IP address for the application URL, is that correct?"
+            },
+            {
+              "id": 2,
+              "task": "Does the application URL match the base URL of the remote application (or the display URL if the remote application is behind a reverse proxy )?"
+            },
+            {
+              "id": 3,
+              "task": "Does the application URL use the correct context path?"
+            }
+          ]
+        },
+        {
+          "cause": "A firewall is blocking access.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Check that the firewall configuration allows access on the required port."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "unknown-host",
+      "title":"Unable to reach the remote application",
+      "summary": "The application link was attempting to connect to the remote application but the hostname of the remote application couldn't be resolved.",
+      "solution": [
+        {
+          "cause": "Misconfigured DNS.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Check your DNS configuration, particularly for private networks.."
+            }
+          ]
+        },
+        {
+          "cause": "The application URL for the remote application is mis-configured, or may have changed recently.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Is the host name correct?"
+            },
+            {
+              "id": 2,
+              "task": "Is the port correct?"
+            },
+            {
+              "id": 3,
+              "task": "Is the context path correct?"
+            },
+            {
+              "id": 4,
+              "task": "Does the application URL match the base URL for the remote application (or the display URL if the remote application is behind a reverse proxy)?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "no-route",
+      "title":"Unable to locate the remote application",
+      "summary": "The application link was attempting to connect to the remote application but couldn't even contact it.",
+      "solution": [
+        {
+          "cause": "A firewall is blocking requests.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Check that the firewall configuration allows access on the required port. Use a tool like traceroute to show the path of traffic between the local and remote machines"
+            }
+          ]
+        },
+        {
+          "cause": "An intermediate router is down.",
+          "action": [
+            {
+              "id": 1,
+              "task": "Use a tool like traceroute to show the path of traffic between the local and remote machines."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cpu-model": [
+    {
+      "name": "CPU 1",
+      "series": [
+        {
+          "name": "used",
+          "value": 75
+        },
+        {
+          "name": "available",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "name": "CPU 2",
+      "series": [
+        {
+          "name": "used",
+          "value": 23
+        },
+        {
+          "name": "available",
+          "value": 77
+        }
+      ]
+    },
+    {
+      "name": "CPU 3",
+      "series": [
+        {
+          "name": "used",
+          "value": 7
+        },
+        {
+          "name": "available",
+          "value": 93
+        }
+      ]
+    }
+  ],
+  "disk-help-model": {
+    "heading": "Disk Information",
+    "summary": "",
+    "details": [
+      {
+        "category": "Disk1",
+        "articles": [
+          {
+            "headline": "IOPS",
+            "description": "ECX enables automated seeding of your SQL Server AlwaysON availability group by leveraging Storage snapshot technology to minimize the data movement between primary and secondary replica.",
+            "benefit": "Automatically and efficiently initialize AlwaysOn availability group.",
+            "id": "id string",
+            "date": "09/10/2017"
+          }
+        ]
+      },
+      {
+        "category": "Disk2",
+        "articles": [
+          {
+            "headline": "IOPS",
+            "description": "ECX 2.7 introduces CDM support for SAP HANA 2.0 SPS01. Single tenant configuration can now be automatically protected using storage snapshot.",
+            "benefit": "Protect your latest version of SAP HANA using ECX Copy Data Management",
+            "id": "id string",
+            "date": "09/10/2017"
+          }
+        ]
+      }
+    ]
+  },
+  "disk-model": [
+    {
+      "name": "used",
+      "value": 45
+    }
+
+  ],
+  "donut-model": [
+    {
+      "name": "compliant",
+      "value": 6,
+      "detail": [
+        {
+          "id": "1234",
+          "name": "20GA_Exchange",
+          "type": "vm",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "2345",
+          "name": "Windows Prod1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "2346",
+          "name": "Red Hat test 1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "2347",
+          "name": "Centos test 1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "2348",
+          "name": "Ubuntu Prod1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "2349",
+          "name": "Ubuntu Prod2",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "staged",
+      "value": 4,
+      "detail": [
+        {
+          "id": "5678",
+          "name": "20GA_SQL",
+          "type": "vm",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "9101",
+          "name": "Windows 2016 Prod1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "9102",
+          "name": "Oracle Version a",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "9103",
+          "name": "Catalog VM Server1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "non-compliant",
+      "value": 2,
+      "detail": [
+        {
+          "id": "1213",
+          "name": "MY SQL",
+          "type": "vm",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        },
+        {
+          "id": "1415",
+          "name": "QA System 1",
+          "tags": [
+            {
+              "facet": "Informational",
+              "name": "storage"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "http-codes": [
+    {
+      "code": "1xx",
+      "phrase": "**Informational**",
+      "description": "\"indicates an interim response for communicating connection status or request progress prior to completing the requested action and sending a final response.\" ~ [sure](http://www.urbandictionary.com/define.php?term=sure)",
+      "spec_title": "RFC7231#6.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.2"
+    },
+    {
+      "code": "100",
+      "phrase": "Continue",
+      "description": "\"indicates that the initial part of a request has been received and has not yet been rejected by the server.\"",
+      "spec_title": "RFC7231#6.2.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.2.1"
+    },
+    {
+      "code": "101",
+      "phrase": "Switching Protocols",
+      "description": "\"indicates that the server understands and is willing to comply with the client's request, via the Upgrade header field, for a change in the application protocol being used on this connection.\"",
+      "spec_title": "RFC7231#6.2.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.2.2"
+    },
+    {
+      "code": "2xx",
+      "phrase": "**Successful**",
+      "description": "\"indicates that the client's request was successfully received, understood, and accepted.\" ~ [cool](https://twitter.com/DanaDanger/status/183316183494311936)",
+      "spec_title": "RFC7231#6.3",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3"
+    },
+    {
+      "code": "200",
+      "phrase": "OK",
+      "description": "\"indicates that the request has succeeded.\"",
+      "spec_title": "RFC7231#6.3.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.1"
+    },
+    {
+      "code": "201",
+      "phrase": "Created",
+      "description": "\"indicates that the request has been fulfilled and has resulted in one or more new resources being created.\"",
+      "spec_title": "RFC7231#6.3.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.2"
+    },
+    {
+      "code": "202",
+      "phrase": "Accepted",
+      "description": "\"indicates that the request has been accepted for processing, but the processing has not been completed.\"",
+      "spec_title": "RFC7231#6.3.3",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.3"
+    },
+    {
+      "code": "203",
+      "phrase": "Non-Authoritative Information",
+      "description": "\"indicates that the request was successful but the enclosed payload has been modified from that of the origin server's 200 (OK) response by a transforming proxy.\"",
+      "spec_title": "RFC7231#6.3.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.4"
+    },
+    {
+      "code": "204",
+      "phrase": "No Content",
+      "description": "\"indicates that the server has successfully fulfilled the request and that there is no additional content to send in the response payload body.\"",
+      "spec_title": "RFC7231#6.3.5",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.5"
+    },
+    {
+      "code": "205",
+      "phrase": "Reset Content",
+      "description": "\"indicates that the server has fulfilled the request and desires that the user agent reset the \"document view\", which caused the request to be sent, to its original state as received from the origin server.\"",
+      "spec_title": "RFC7231#6.3.6",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.6"
+    },
+    {
+      "code": "206",
+      "phrase": "Partial Content",
+      "description": "\"indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the requests's Range header field.\"",
+      "spec_title": "RFC7233#4.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7233#section-4.1"
+    },
+    {
+      "code": "3xx",
+      "phrase": "**Redirection**",
+      "description": "\"indicates that further action needs to be taken by the user agent in order to fulfill the request.\" ~ [ask that dude over there](https://twitter.com/DanaDanger/status/183316183494311936)",
+      "spec_title": "RFC7231#6.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4"
+    },
+    {
+      "code": "300",
+      "phrase": "Multiple Choices",
+      "description": "\"indicates that the target resource has more than one representation, each with its own more specific identifier, and information about the alternatives is being provided so that the user (or user agent) can select a preferred representation by redirecting its request to one or more of those identifiers.\"",
+      "spec_title": "RFC7231#6.4.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.1"
+    },
+    {
+      "code": "301",
+      "phrase": "Moved Permanently",
+      "description": "\"indicates that the target resource has been assigned a new permanent URI and any future references to this resource ought to use one of the enclosed URIs.\"",
+      "spec_title": "RFC7231#6.4.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.2"
+    },
+    {
+      "code": "302",
+      "phrase": "Found",
+      "description": "\"indicates that the target resource resides temporarily under a different URI.\"",
+      "spec_title": "RFC7231#6.4.3",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.3"
+    },
+    {
+      "code": "303",
+      "phrase": "See Other",
+      "description": "\"indicates that the server is redirecting the user agent to a different resource, as indicated by a URI in the Location header field, that is intended to provide an indirect response to the original request.\"",
+      "spec_title": "RFC7231#6.4.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.4"
+    },
+    {
+      "code": "304",
+      "phrase": "Not Modified",
+      "description": "\"indicates that a conditional GET request has been received and would have resulted in a 200 (OK) response if it were not for the fact that the condition has evaluated to false.\"",
+      "spec_title": "RFC7232#4.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7232#section-4.1"
+    },
+    {
+      "code": "305",
+      "phrase": "Use Proxy",
+      "description": "*deprecated*",
+      "spec_title": "RFC7231#6.4.5",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.5"
+    },
+    {
+      "code": "307",
+      "phrase": "Temporary Redirect",
+      "description": "\"indicates that the target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.\"",
+      "spec_title": "RFC7231#6.4.7",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.7"
+    },
+    {
+      "code": "4xx",
+      "phrase": "**Client Error**",
+      "description": "\"indicates that the client seems to have erred.\" ~ [*you* fucked up](https://twitter.com/DanaDanger/status/183316183494311936)",
+      "spec_title": "RFC7231#6.5",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5"
+    },
+    {
+      "code": "400",
+      "phrase": "Bad Request",
+      "description": "\"indicates that the server cannot or will not process the request because the received syntax is invalid, nonsensical, or exceeds some limitation on what the server is willing to process.\"",
+      "spec_title": "RFC7231#6.5.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+    },
+    {
+      "code": "401",
+      "phrase": "Unauthorized",
+      "description": "\"indicates that the request has not been applied because it lacks valid authentication credentials for the target resource.\"",
+      "spec_title": "RFC7235#6.3.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7235#section-3.1"
+    },
+    {
+      "code": "402",
+      "phrase": "Payment Required",
+      "description": "*reserved*",
+      "spec_title": "RFC7231#6.5.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.2"
+    },
+    {
+      "code": "403",
+      "phrase": "Forbidden",
+      "description": "\"indicates that the server understood the request but refuses to authorize it.\"",
+      "spec_title": "RFC7231#6.5.3",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.3"
+    },
+    {
+      "code": "404",
+      "phrase": "Not Found",
+      "description": "\"indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists.\"",
+      "spec_title": "RFC7231#6.5.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.4"
+    },
+    {
+      "code": "405",
+      "phrase": "Method Not Allowed",
+      "description": "\"indicates that the method specified in the request-line is known by the origin server but not supported by the target resource.\"",
+      "spec_title": "RFC7231#6.5.5",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.5"
+    },
+    {
+      "code": "406",
+      "phrase": "Not Acceptable",
+      "description": "\"indicates that the target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation.\"",
+      "spec_title": "RFC7231#6.5.6",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.6"
+    },
+    {
+      "code": "407",
+      "phrase": "Proxy Authentication Required",
+      "description": "\"is similar to 401 (Unauthorized), but indicates that the client needs to authenticate itself in order to use a proxy.\"",
+      "spec_title": "RFC7235#3.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7235#section-3.2"
+    },
+    {
+      "code": "408",
+      "phrase": "Request Timeout",
+      "description": "\"indicates that the server did not receive a complete request message within the time that it was prepared to wait.\"",
+      "spec_title": "RFC7231#6.5.7",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.7"
+    },
+    {
+      "code": "409",
+      "phrase": "Conflict",
+      "description": "\"indicates that the request could not be completed due to a conflict with the current state of the resource.\"",
+      "spec_title": "RFC7231#6.5.8",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.8"
+    },
+    {
+      "code": "410",
+      "phrase": "Gone",
+      "description": "\"indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.\"",
+      "spec_title": "RFC7231#6.5.9",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.9"
+    },
+    {
+      "code": "411",
+      "phrase": "Length Required",
+      "description": "\"indicates that the server refuses to accept the request without a defined Content-Length.\"",
+      "spec_title": "RFC7231#6.5.10",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.10"
+    },
+    {
+      "code": "412",
+      "phrase": "Precondition Failed",
+      "description": "\"indicates that one or more preconditions given in the request header fields evaluated to false when tested on the server.\"",
+      "spec_title": "RFC7232#4.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7232#section-4.2"
+    },
+    {
+      "code": "413",
+      "phrase": "Payload Too Large",
+      "description": "\"indicates that the server is refusing to process a request because the request payload is larger than the server is willing or able to process.\"",
+      "spec_title": "RFC7231#6.5.11",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.11"
+    },
+    {
+      "code": "414",
+      "phrase": "URI Too Long",
+      "description": "\"indicates that the server is refusing to service the request because the request-target is longer than the server is willing to interpret.\"",
+      "spec_title": "RFC7231#6.5.12",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.12"
+    },
+    {
+      "code": "415",
+      "phrase": "Unsupported Media Type",
+      "description": "\"indicates that the origin server is refusing to service the request because the payload is in a format not supported by the target resource for this method.\"",
+      "spec_title": "RFC7231#6.5.13",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.13"
+    },
+    {
+      "code": "416",
+      "phrase": "Range Not Satisfiable",
+      "description": "\"indicates that none of the ranges in the request's Range header field overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges.\"",
+      "spec_title": "RFC7233#4.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7233#section-4.4"
+    },
+    {
+      "code": "417",
+      "phrase": "Expectation Failed",
+      "description": "\"indicates that the expectation given in the request's Expect header field could not be met by at least one of the inbound servers.\"",
+      "spec_title": "RFC7231#6.5.14",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.14"
+    },
+    {
+      "code": "418",
+      "phrase": "I'm a teapot",
+      "description": "\"Any attempt to brew coffee with a teapot should result in the error code 418 I'm a teapot.\"",
+      "spec_title": "RFC2324#2.3.1",
+      "spec_href": "https://tools.ietf.org/html/rfc2324#section-2.3.1"
+    },
+    {
+      "code": "426",
+      "phrase": "Upgrade Required",
+      "description": "\"indicates that the server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol.\"",
+      "spec_title": "RFC7231#6.5.15",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.15"
+    },
+    {
+      "code": "5xx",
+      "phrase": "**Server Error**",
+      "description": "\"indicates that the server is aware that it has erred or is incapable of performing the requested method.\" ~ [*we* fucked up](https://twitter.com/DanaDanger/status/183316183494311936)",
+      "spec_title": "RFC7231#6.6",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6"
+    },
+    {
+      "code": "500",
+      "phrase": "Internal Server Error",
+      "description": "\"indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.\"",
+      "spec_title": "RFC7231#6.6.1",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+    },
+    {
+      "code": "501",
+      "phrase": "Not Implemented",
+      "description": "\"indicates that the server does not support the functionality required to fulfill the request.\"",
+      "spec_title": "RFC7231#6.6.2",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.2"
+    },
+    {
+      "code": "502",
+      "phrase": "Bad Gateway",
+      "description": "\"indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.\"",
+      "spec_title": "RFC7231#6.6.3",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.3"
+    },
+    {
+      "code": "503",
+      "phrase": "Service Unavailable",
+      "description": "\"indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\"",
+      "spec_title": "RFC7231#6.6.4",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.4"
+    },
+    {
+      "code": "504",
+      "phrase": "Gateway Time-out",
+      "description": "\"indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.\"",
+      "spec_title": "RFC7231#6.6.5",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.5"
+    },
+    {
+      "code": "505",
+      "phrase": "HTTP Version Not Supported",
+      "description": "\"indicates that the server does not support, or refuses to support, the protocol version that was used in the request message.\"",
+      "spec_title": "RFC7231#6.6.6",
+      "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.6"
+    },
+    {
+      "code": "102",
+      "phrase": "Processing",
+      "description": "\"is an interim response used to inform the client that the server has accepted the complete request, but has not yet completed it.\"",
+      "spec_title": "RFC5218#10.1",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.1"
+    },
+    {
+      "code": "207",
+      "phrase": "Multi-Status",
+      "description": "\"provides status for multiple independent operations.\"",
+      "spec_title": "RFC5218#10.2",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.2"
+    },
+    {
+      "code": "226",
+      "phrase": "IM Used",
+      "description": "\"The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.\"",
+      "spec_title": "RFC3229#10.4.1",
+      "spec_href": "https://tools.ietf.org/html/rfc3229#section-10.4.1"
+    },
+    {
+      "code": "308",
+      "phrase": "Permanent Redirect",
+      "description": "\"The target resource has been assigned a new permanent URI and any future references to this resource outght to use one of the enclosed URIs. [...] This status code is similar to 301 Moved Permanently (Section 7.3.2 of rfc7231), except that it does not allow rewriting the request method from POST to GET.\"",
+      "spec_title": "RFC7538",
+      "spec_href": "https://tools.ietf.org/html/rfc7538"
+    },
+    {
+      "code": "422",
+      "phrase": "Unprocessable Entity",
+      "description": "\"means the server understands the content type of the request entity (hence a 415(Unsupported Media Type) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to process the contained instructions.\"",
+      "spec_title": "RFC5218#10.3",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.3"
+    },
+    {
+      "code": "423",
+      "phrase": "Locked",
+      "description": "\"means the source or destination resource of a method is locked.\"",
+      "spec_title": "RFC5218#10.4",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.4"
+    },
+    {
+      "code": "424",
+      "phrase": "Failed Dependency",
+      "description": "\"means that the method could not be performed on the resource because the requested action depended on another action and that action failed.\"",
+      "spec_title": "RFC5218#10.5",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.5"
+    },
+    {
+      "code": "428",
+      "phrase": "Precondition Required",
+      "description": "\"indicates that the origin server requires the request to be conditional.\"",
+      "spec_title": "RFC6585#3",
+      "spec_href": "https://tools.ietf.org/html/rfc6585#section-3"
+    },
+    {
+      "code": "429",
+      "phrase": "Too Many Requests",
+      "description": "\"indicates that the user has sent too many requests in a given amount of time (\"rate limiting\").\"",
+      "spec_title": "RFC6585#4",
+      "spec_href": "https://tools.ietf.org/html/rfc6585#section-4"
+    },
+    {
+      "code": "431",
+      "phrase": "Request Header Fields Too Large",
+      "description": "\"indicates that the server is unwilling to process the request because its header fields are too large.\"",
+      "spec_title": "RFC6585#5",
+      "spec_href": "https://tools.ietf.org/html/rfc6585#section-5"
+    },
+    {
+      "code": "451",
+      "phrase": "Unavailable For Legal Reasons",
+      "description": "\"This status code indicates that the server is denying access to the resource in response to a legal demand.\"",
+      "spec_title": "draft-ietf-httpbis-legally-restricted-status",
+      "spec_href": "https://tools.ietf.org/html/draft-ietf-httpbis-legally-restricted-status"
+    },
+    {
+      "code": "506",
+      "phrase": "Variant Also Negotiates",
+      "description": "\"indicates that the server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.\"",
+      "spec_title": "RFC2295#8.1",
+      "spec_href": "https://tools.ietf.org/html/rfc2295#section-8.1"
+    },
+    {
+      "code": "507",
+      "phrase": "Insufficient Storage",
+      "description": "\"means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.\"",
+      "spec_title": "RFC5218#10.6",
+      "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.6"
+    },
+    {
+      "code": "511",
+      "phrase": "Network Authentication Required",
+      "description": "\"indicates that the client needs to authenticate to gain network access.\"",
+      "spec_title": "RFC6585#6",
+      "spec_href": "https://tools.ietf.org/html/rfc6585#section-6"
+    },
+    {
+      "code": "7xx",
+      "phrase": "**Developer Error**",
+      "description": "[err](http://www.urbandictionary.com/define.php?term=err)",
+      "spec_title": "7xx-rfc",
+      "spec_href": "http://documentup.com/joho/7XX-rfc"
+    }
+  ],
+  "news-model": [
+    {
+      "heading": "",
+      "summary": "",
+      "details": [
+        {
+          "category": "Application A Enhancements",
+          "articles": [
+            {
+              "headline": "Automated Seeding for Always On",
+              "description": "Enables automated seeding of your Application A AlwaysON availability group by leveraging Storage snapshot technology to minimize the data movement between primary and secondary replica.",
+              "benefit": "Automatically and efficiently initialize AlwaysOn availability group.",
+              "id": "id string",
+              "date": "09/10/2017"
+            }
+          ]
+        },
+        {
+          "category": "Application B Enhancements",
+          "articles": [
+            {
+              "headline": "Application B support",
+              "description": "Introduces CDM support for Application B. Single tenant configuration can now be automatically protected using storage snapshot.",
+              "benefit": "Protect your latest version of Application B using Product Copy Data Management",
+              "id": "id string",
+              "date": "09/10/2017"
+            },
+            {
+              "headline": "Recovery improvements",
+              "description": "Product now enables Instant recovery of Application B database to original location from the UI portal.",
+              "benefit": "Flexible recovery options",
+              "id": "id string",
+              "date": "09/10/2017"
+            }
+          ]
+        },
+        {
+          "category": "Application C support",
+          "articles": [
+            {
+              "headline": "Application C support",
+              "description": "Product now supports Application C configurations running 9 and above.",
+              "benefit": "Automatically and efficiently initialize AlwaysOn availability group.",
+              "id": "id string",
+              "date": "09/10/2017"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "port-model": [
+
+    {
+      "serviceName": "Secure Shell (SSH) ",
+      "portNumber": "22",
+      "transportProtocol": "tcp",
+      "description": "Secure Shell (SSH)"
+    },
+    {
+      "serviceName": "sunrpc",
+      "portNumber": "111",
+      "transportProtocol": "tcp",
+      "description": "Remote Procedure Call (RPC) port binding."
+    },
+    {
+      "serviceName": "LDAP",
+      "portNumber": "389",
+      "transportProtocol": "tcp",
+      "description": "Default LDAP port."
+
+    },
+    {
+      "serviceName": "Default TLS port",
+      "portNumber": "443",
+      "transportProtocol": "tcp",
+      "description": "Default web server secure port used with SPP, VCenter and ESX Hosts"
+
+    },
+    {
+      "serviceName": "LDAP (TLS)",
+      "portNumber": "636",
+      "transportProtocol": "tcp",
+      "description": "Default LDAP support that encrypts data in flight using TLS."
+
+    },
+    {
+      "serviceName": "nfs",
+      "portNumber": "2049",
+      "transportProtocol": "tcp",
+      "description": "Used for NFS data transfer to/from vSnap."
+    },
+    {
+      "serviceName": "iSCSI",
+      "portNumber": "3260",
+      "transportProtocol": "tcp",
+      "description": "Used for iSCSI data transfer to/from vSnap."
+    },
+    {
+      "serviceName": "mountd",
+      "portNumber": "20048",
+      "transportProtocol": "tcp",
+      "description": "NFS mount protocol"
+    },
+    {
+      "serviceName": "VADP Proxy",
+      "portNumber": "8080",
+      "transportProtocol": "tcp",
+      "description": "VMware VM data mover management interface. "
+    },
+    {
+      "serviceName": "vSnap",
+      "portNumber": "8900",
+      "transportProtocol": "tcp",
+      "description": "VSnap management service"
+    },
+    {
+      "serviceName": "ESXI Network File Copy (NFC)",
+      "portNumber": "902",
+      "transportProtocol": "tcp",
+      "description": "ESXI Network File Copy (NFC)"
+    },
+    {
+      "serviceName": "Discovery Service",
+      "portNumber": "8761",
+      "transportProtocol": "tcp",
+      "description": "Automatically discovers VADP proxies and is used by IBM Spectrum Protect Plus VM backup operations."
+    },
+    {
+      "serviceName": "Rabbit MQ",
+      "portNumber": "5671",
+      "transportProtocol": "tcp",
+      "description": "Message framework used for communicating asynchronous events."
+    }
+
+  ],
+  "stat-database-model": {
+    "name":"Databases",
+    "total":200,
+    "protected":100,
+    "percentProtected":40,
+    "icon":"database icon",
+    "color":"orange"
+  },
+  "stat-job-model": {
+    "name":"Jobs",
+    "total":50,
+    "protected":50,
+    "percentProtected":40,
+    "icon":"settings icon",
+    "color":"blue"
+  },
+  "stat-undefined-model": {
+    "name":"Virtual Machines",
+    "total":565,
+    "protected":200,
+    "percentProtected":40,
+    "icon":"desktop icon"
+  },
+  "stat-vm-model": {
+    "name":"Virtual Machines",
+    "total":565,
+    "protected":200,
+    "percentProtected":40,
+    "icon":"desktop icon",
+    "color":"green"
+  },
+  "stat-volume-model": {
+    "name":"Volumes",
+    "total":252,
+    "protected":70,
+    "percentProtected":30,
+    "icon":"hdd outline icon",
+    "color":"purple"
+  },
+  "storage-model": {
+    "volumes": [
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1356808419",
+        "poolId": "510143747",
+        "policyId": "Policy_200",
+        "protocolType": "NFS",
+        "total": 699,
+        "allocated": 559,
+        "available": 140,
+        "fileCount": 73743181,
+        "vmCount": 20,
+        "snapshotCount": 94,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "50336434",
+        "poolId": "510143747",
+        "policyId": "Policy_272",
+        "protocolType": "CIFS",
+        "total": 131,
+        "allocated": 104,
+        "available": 27,
+        "fileCount": 140916696,
+        "vmCount": 65,
+        "snapshotCount": 164,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1400372106",
+        "poolId": "510143747",
+        "policyId": "Policy_525",
+        "protocolType": "MIXED",
+        "total": 554,
+        "allocated": 443,
+        "available": 111,
+        "fileCount": 674658385,
+        "vmCount": 27,
+        "snapshotCount": 133,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "438801716",
+        "poolId": "510143747",
+        "policyId": "Policy_961",
+        "protocolType": "NFS",
+        "total": 1688,
+        "allocated": 1350,
+        "available": 338,
+        "fileCount": 509518383,
+        "vmCount": 100,
+        "snapshotCount": 51,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "179172896",
+        "poolId": "510143747",
+        "policyId": "Policy_673",
+        "protocolType": "CIFS",
+        "total": 188,
+        "allocated": 150,
+        "available": 38,
+        "fileCount": 1423354710,
+        "vmCount": 41,
+        "snapshotCount": 170,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1863489116",
+        "poolId": "510143747",
+        "policyId": "Policy_494",
+        "protocolType": "MIXED",
+        "total": 1478,
+        "allocated": 1182,
+        "available": 296,
+        "fileCount": 2055981538,
+        "vmCount": 24,
+        "snapshotCount": 218,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "679542288",
+        "poolId": "510143747",
+        "policyId": "Policy_141",
+        "protocolType": "NFS",
+        "total": 1576,
+        "allocated": 1260,
+        "available": 316,
+        "fileCount": 484598180,
+        "vmCount": 91,
+        "snapshotCount": 91,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1448008057",
+        "poolId": "510143747",
+        "policyId": "Policy_865",
+        "protocolType": "CIFS",
+        "total": 187,
+        "allocated": 149,
+        "available": 38,
+        "fileCount": 1455150084,
+        "vmCount": 69,
+        "snapshotCount": 29,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "107331726",
+        "poolId": "510143747",
+        "policyId": "Policy_506",
+        "protocolType": "MIXED",
+        "total": 1060,
+        "allocated": 848,
+        "available": 212,
+        "fileCount": 888401401,
+        "vmCount": 96,
+        "snapshotCount": 121,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1696309046",
+        "poolId": "684805883",
+        "policyId": "Policy_807",
+        "protocolType": "NFS",
+        "total": 490,
+        "allocated": 392,
+        "available": 98,
+        "fileCount": 981393962,
+        "vmCount": 82,
+        "snapshotCount": 175,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "467763111",
+        "poolId": "684805883",
+        "policyId": "Policy_434",
+        "protocolType": "CIFS",
+        "total": 464,
+        "allocated": 371,
+        "available": 93,
+        "fileCount": 1683837460,
+        "vmCount": 40,
+        "snapshotCount": 41,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "892564621",
+        "poolId": "684805883",
+        "policyId": "Policy_383",
+        "protocolType": "MIXED",
+        "total": 1981,
+        "allocated": 1584,
+        "available": 397,
+        "fileCount": 705071166,
+        "vmCount": 61,
+        "snapshotCount": 241,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1805386240",
+        "poolId": "684805883",
+        "policyId": "Policy_644",
+        "protocolType": "NFS",
+        "total": 823,
+        "allocated": 658,
+        "available": 165,
+        "fileCount": 1184142679,
+        "vmCount": 77,
+        "snapshotCount": 42,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "744675109",
+        "poolId": "2072746734",
+        "policyId": "Policy_927",
+        "protocolType": "NFS",
+        "total": 2022,
+        "allocated": 1617,
+        "available": 405,
+        "fileCount": 1047060306,
+        "vmCount": 19,
+        "snapshotCount": 145,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1984542573",
+        "poolId": "2072746734",
+        "policyId": "Policy_940",
+        "protocolType": "CIFS",
+        "total": 386,
+        "allocated": 308,
+        "available": 78,
+        "fileCount": 1535796442,
+        "vmCount": 19,
+        "snapshotCount": 111,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1594459696",
+        "poolId": "2072746734",
+        "policyId": "Policy_812",
+        "protocolType": "MIXED",
+        "total": 1303,
+        "allocated": 1042,
+        "available": 261,
+        "fileCount": 1423752387,
+        "vmCount": 51,
+        "snapshotCount": 92,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1119961550",
+        "poolId": "2072746734",
+        "policyId": "Policy_211",
+        "protocolType": "NFS",
+        "total": 656,
+        "allocated": 524,
+        "available": 132,
+        "fileCount": 1425203788,
+        "vmCount": 31,
+        "snapshotCount": 188,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1888422731",
+        "poolId": "2072746734",
+        "policyId": "Policy_239",
+        "protocolType": "CIFS",
+        "total": 791,
+        "allocated": 632,
+        "available": 159,
+        "fileCount": 917272960,
+        "vmCount": 74,
+        "snapshotCount": 10,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "1639523587",
+        "poolId": "2072746734",
+        "policyId": "Policy_391",
+        "protocolType": "MIXED",
+        "total": 1197,
+        "allocated": 957,
+        "available": 240,
+        "fileCount": 1765944241,
+        "vmCount": 20,
+        "snapshotCount": 166,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "mixed"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "396800785",
+        "poolId": "1367767837",
+        "policyId": "Policy_177",
+        "protocolType": "NFS",
+        "total": 1350,
+        "allocated": 1080,
+        "available": 270,
+        "fileCount": 940273680,
+        "vmCount": 60,
+        "snapshotCount": 66,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "2082371931",
+        "poolId": "1367767837",
+        "policyId": "Policy_53",
+        "protocolType": "CIFS",
+        "total": 2016,
+        "allocated": 1612,
+        "available": 404,
+        "fileCount": 1899545025,
+        "vmCount": 94,
+        "snapshotCount": 36,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "cifs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      },
+      {
+        "type": "ZFSVOLUME",
+        "timestamp": 1511668600434,
+        "volumeId": "387140983",
+        "poolId": "1367767837",
+        "policyId": "Policy_142",
+        "protocolType": "MIXED",
+        "total": 1318,
+        "allocated": 1054,
+        "available": 264,
+        "fileCount": 128550758,
+        "vmCount": 69,
+        "snapshotCount": 202,
+        "compressionRatio": 2.5,
+        "dedupeEfficiency": 25,
+        "name": "ZFSVOLUME",
+        "description": "ZFS Volume Description.",
+        "icon": "assets/images/volume.png",
+        "tags": [
+          {
+            "facet": "Protocol",
+            "name": "nfs"
+          },
+          {
+            "facet": "Range",
+            "name": "allocated"
+          }
+        ],
+        "actions": [
+          {
+            "name": "view policy"
+          }
+        ]
+      }
+    ]
+  },
+  "todo-model": {
+    "name":"Todo",
+    "value":"Example service data!"
+  },
+  "trend-model": {
+    "data": [
+      {
+        "name": "Resource A",
+        "series": [
+          {
+            "name": "January",
+            "value": 3453
+          },
+          {
+            "name": "February",
+            "value": 3434434
+          },
+          {
+            "name": "March",
+            "value": 333335
+          },
+          {
+            "name": "April",
+            "value": 434
+          }
+        ]
+      },
+      {
+        "name": "Resource B",
+        "series": [
+          {
+            "name": "January",
+            "value": 78
+          },
+          {
+            "name": "February",
+            "value": 82700
+          },
+          {
+            "name": "March",
+            "value": 4333335
+          },
+          {
+            "name": "April",
+            "value": 8345
+          }
+        ]
+      },
+      {
+        "name": "Resource C",
+        "series": [
+          {
+            "name": "January",
+            "value": 5043344
+          },
+          {
+            "name": "February",
+            "value": 5800
+          },
+          {
+            "name": "March",
+            "value": 333335
+          },
+          {
+            "name": "April",
+            "value": 4343333
+          }
+        ]
+      }
+    ]
+  },
+  "trendline-help-model": {
+    "heading": "Trends",
+    "summary": "",
+    "details": [
+      {
+        "category": "IOPS",
+        "articles": [
+          {
+            "headline": "IOPS",
+            "description": "ECX enables automated seeding of your SQL Server AlwaysON availability group by leveraging Storage snapshot technology to minimize the data movement between primary and secondary replica.",
+            "benefit": "Automatically and efficiently initialize AlwaysOn availability group.",
+            "id": "id string",
+            "date": "09/10/2017"
+          }
+        ]
+      },
+      {
+        "category": "CPU",
+        "articles": [
+          {
+            "headline": "SAP HANA 2.0 support",
+            "description": "ECX 2.7 introduces CDM support for SAP HANA 2.0 SPS01. Single tenant configuration can now be automatically protected using storage snapshot.",
+            "benefit": "Protect your latest version of SAP HANA using ECX Copy Data Management",
+            "id": "id string",
+            "date": "09/10/2017"
+          },
+          {
+            "headline": "Recovery improvements",
+            "description": "ECX now enables Instant recovery of SAP HANA database to original location from the UI portal.",
+            "benefit": "Flexible recovery options",
+            "id": "id string",
+            "date": "09/10/2017"
+          }
+        ]
+      }
+    ]
+  }
+}

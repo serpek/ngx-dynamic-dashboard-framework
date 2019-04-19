@@ -24,9 +24,10 @@ import {RuntimeService} from '@app/services/runtime.service';
 import {ConfigurationService} from '@app/services/configuration.service';
 import {ObservableWebSocketService} from '@app/services/websocket-service';
 
+import {GadgetPropertyService} from '@app/gadgets/_common/gadget-property.service';
+
 import {
     GadgetSharedModule,
-    GadgetPropertyService,
     MemoryGadgetComponent,
     CPUGadgetComponent,
     ServiceListGadgetComponent,

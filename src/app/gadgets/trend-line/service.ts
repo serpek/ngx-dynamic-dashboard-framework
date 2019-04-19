@@ -73,7 +73,7 @@ export class TrendLineService {
     }
 
     getHelpTopic() {
-        return this._http.get('/assets/api/trendline-help-model.json')
+        return this._http.get('trendline-help-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

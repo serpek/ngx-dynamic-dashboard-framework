@@ -1,7 +1,6 @@
 import {NgModule, ANALYZE_FOR_ENTRY_COMPONENTS} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {} from 'ng2-dnd';
 import {HttpClientModule} from '@angular/common/http';
 import {GridsterModule} from 'angular-gridster2';
 import {MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';

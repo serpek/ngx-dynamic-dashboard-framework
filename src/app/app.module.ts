@@ -5,12 +5,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {RoutingModule} from './routing.module';
-import {SharedModule} from './shared';
 import {CoreModule} from '@app/core';
 import {ShellModule} from '@app/shell/shell.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {LoginModule} from '@app/login/login.module';
 import {BoardModule} from '@app/board/board.module';
+import {SharedModule} from '@app/shared';
 
 @NgModule({
     imports: [

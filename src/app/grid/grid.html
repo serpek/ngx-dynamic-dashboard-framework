@@ -1,5 +1,4 @@
-
-<gridster [options]="options">
+<gridster [options]="options" *ngIf="board.title">
     <!--<gridster-item [item]="item" *ngFor="let item of dashboard">
         <div class="button-holder">
             <button mat-mini-fab (mousedown)="removeItem($event, item)"
@@ -8,33 +7,15 @@
             </button>
         </div>
     </gridster-item>-->
-
-    <div *ngFor="let row of model.rows; let r = index">
+    <div *ngFor="let row of board.rows; let r = index">
         <gridster-item *ngFor="let col of row.columns; let c = index" [item]="col">
-            <app-grid-cell *ngFor="let cellGadget of col.gadgets"
-                           [gadgetInstanceId]="cellGadget.instanceId"
-                           [gadgetConfig]="cellGadget.config"
-                           [gadgetType]="cellGadget.componentType"
-                           [gadgetTags]="cellGadget.tags">
+            <app-grid-cell *ngFor="let gadget of col.gadgets"
+                           [gadgetInstanceId]="gadget.instanceId"
+                           [gadgetConfig]="gadget.config"
+                           [gadgetType]="gadget.componentType"
+                           [gadgetTags]="gadget.tags">
             </app-grid-cell>
         </gridster-item>
     </div>
-
-
 </gridster>
-
-<div style="display: none;">
-    <div *ngFor="let row of model.rows; let r = index">
-        <div *ngFor="let col of row.columns; let c = index" >
-            <app-grid-cell *ngFor="let cellGadget of col.gadgets"
-                           [gadgetInstanceId]="cellGadget.instanceId"
-                           [gadgetConfig]="cellGadget.config"
-                           [gadgetType]="cellGadget.componentType"
-                           [gadgetTags]="cellGadget.tags">
-            </app-grid-cell>
-        </div>
-    </div>
-</div>
-
-
 <app-toast></app-toast>

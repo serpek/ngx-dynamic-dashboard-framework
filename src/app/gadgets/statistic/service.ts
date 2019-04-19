@@ -9,7 +9,7 @@ export class StatisticService {
     }
 
     get(resourceType: any) {
-        return this._http.get('/assets/api/stat-' + resourceType + '-model.json')
+        return this._http.get('stat-' + resourceType + '-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

@@ -12,7 +12,7 @@ export class TodoService {
     }
 
     get() {
-        return this._http.get('/assets/api/todo-model.json')
+        return this._http.get('todo-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

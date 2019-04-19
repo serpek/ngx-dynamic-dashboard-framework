@@ -94,7 +94,7 @@ export class AddGadgetComponent implements AfterViewInit {
         this._addGadgetService.getGadgetLibrary().subscribe(data => {
             this.gadgetObjectList.length = 0;
             const me = this;
-            data.library.forEach((item: any) => {
+            data.forEach(item => {
                 me.gadgetObjectList.push(item);
                 me.gadgetObjectTitleList.push(item.name);
             });

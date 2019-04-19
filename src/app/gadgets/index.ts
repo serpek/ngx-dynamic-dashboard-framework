@@ -1,5 +1,4 @@
 export {GadgetSharedModule} from '@app/gadgets/_common/gadget-shared.module';
-export {GadgetPropertyService} from '@app/gadgets/_common/gadget-property.service';
 export {MemoryGadgetComponent} from '@app/gadgets/memory/memory-gadget.component';
 export {CPUGadgetComponent} from '@app/gadgets/cpu/cpu-gadget.component';
 export {ServiceListGadgetComponent} from '@app/gadgets/service-list/service-list-gadget.component';

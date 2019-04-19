@@ -19,9 +19,7 @@ declare var jQuery: any;
     templateUrl: './view.html',
     styleUrls: ['../_common/styles-gadget.css']
 })
-
 export class BarChartGadgetComponent extends GadgetBase {
-
     @ViewChild('chartOptionsSideBar_tag') chartOptionsSideBarRef: ElementRef;
     chartOptionsSideBar: any;
 
@@ -38,7 +36,7 @@ export class BarChartGadgetComponent extends GadgetBase {
     xAxisLabel: string;
     view: any[];
     colorScheme: any = {
-        domain: ['#0AFF16', '#B2303B'] // todo - control color from property page
+        domain: ['#0AFF16', '#B2303B']  // todo - control color from property page
     };
     //////////////////
 

@@ -7,9 +7,15 @@ import {GadgetInstanceService} from '../../grid/grid.service';
 import {AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {OptionsService} from '../../configuration/tab-options/service';
 import {DynamicFormComponent} from '@app/shared/dynamic-form/dynamic-form.component';
+import {IGadget} from '@app/models/Board';
 
 export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterViewInit {
     @ViewChild(DynamicFormComponent) propertyPageForm: DynamicFormComponent;
+
+    cols: number;
+    rows: number;
+    y: number;
+    x: number;
 
     title: string;
     instanceId: number;

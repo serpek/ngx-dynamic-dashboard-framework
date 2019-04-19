@@ -1,21 +1,16 @@
-/**
- * Created by jayhamilton on 6/24/17.
- */
-
 import {Injectable} from '@angular/core';
 import {RuntimeService} from '../../services/runtime.service';
 import {timer, Observable} from 'rxjs';
-import {catchError} from "rxjs/operators";
+import {catchError} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class DonutService {
-
     constructor(private _http: HttpClient) {
     }
 
     get() {
-        return this._http.get<any[]>('/assets/api/donut-model.json')
+        return this._http.get<any[]>('donut-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );
@@ -23,7 +18,7 @@ export class DonutService {
 
     getHelpTopic() {
 
-        return this._http.get('/assets/api/disk-help-model.json')
+        return this._http.get('disk-help-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

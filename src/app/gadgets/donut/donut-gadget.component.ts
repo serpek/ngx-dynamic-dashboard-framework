@@ -3,12 +3,12 @@ import {style, trigger, animate, transition, state} from '@angular/animations';
 
 import {GadgetBase} from '@app/gadgets/_common/gadget-base';
 import {GadgetInstanceService} from '@app/grid/grid.service';
-import {GadgetPropertyService} from '@app/gadgets';
 import {DonutService} from '@app/gadgets/donut/service';
 import {APITokenService} from '@app/services/api-token.service';
 import {OptionsService} from '@app/configuration/tab-options/service';
 import {RuntimeService} from '@app/services/runtime.service';
 import {EndPointService} from '@app/configuration/tab-endpoint/endpoint.service';
+import {GadgetPropertyService} from '@app/gadgets/_common/gadget-property.service';
 
 @Component({
     selector: 'app-dynamic-component',
@@ -92,7 +92,6 @@ export class DonutGadgetComponent extends GadgetBase implements OnDestroy {
         this.setStopState(false);
     }
 
-
     public updateData(data: any[]) {
 
         this.donutServiceSubscription = this._donutService.poll().subscribe(donutData => {
@@ -107,14 +106,9 @@ export class DonutGadgetComponent extends GadgetBase implements OnDestroy {
         });
     }
 
-
     public updateProperties(updatedProperties: any) {
-
         const updatedPropsObject = JSON.parse(updatedProperties);
-
-        this.propertyPages.forEach(function (propertyPage) {
-
-
+        this.propertyPages.forEach((propertyPage: any) => {
             for (let x = 0; x < propertyPage.properties.length; x++) {
 
                 for (const prop in updatedPropsObject) {
@@ -134,7 +128,6 @@ export class DonutGadgetComponent extends GadgetBase implements OnDestroy {
         this.showOperationControls = true;
 
         this.setEndPoint(updatedPropsObject.endpoint);
-
     }
 
     setTopic() {

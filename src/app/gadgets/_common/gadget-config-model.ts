@@ -1,15 +1,18 @@
 import {PropertyBase} from '@app/shared/dynamic-form/property-base';
+import {GroupID, IConfig, IDisplayName, IPropertyPage} from '@app/models/Board';
 
-export class GadgetConfigModel {
+export class GadgetConfigModel implements IConfig {
     propertyPages: PropertyPage[] = [];
 
-    constructor(config: any) {
-        config.propertyPages.forEach((page: any) => {
+    constructor(config: IConfig) {
+        config.propertyPages.forEach(page => {
             const props: PropertyBase<any>[] = [];
-            page.properties.forEach((prop: any) => {
+
+            page.properties.forEach(prop => {
                 switch (prop.controlType) {
                     case 'textbox':
                     case 'dropdown':
+                    case 'previewdropdown':
                     case 'dynamicdropdown':
                         props.push(new PropertyBase<string>(prop));
                         break;
@@ -24,20 +27,21 @@ export class GadgetConfigModel {
                         break;
                 }
             });
-            this.propertyPages.push(new PropertyPage(page.displayName, page.groupId, page.position, props));
+
+            this.propertyPages.push(new PropertyPage(page.displayName, page.groupID, page.position, props));
         });
     }
 }
 
-class PropertyPage {
-    displayName: string;
-    groupId: string;
+class PropertyPage implements IPropertyPage {
+    displayName: IDisplayName;
+    groupID: GroupID;
     position: number;
     properties: PropertyBase<any>[];
 
-    constructor(displayName: string, groupId: string, position: number, properties: PropertyBase<any>[]) {
+    constructor(displayName: IDisplayName, groupId: GroupID, position: number, properties: PropertyBase<any>[]) {
         this.displayName = displayName;
-        this.groupId = groupId;
+        this.groupID = groupId;
         this.position = position;
         this.properties = properties;
     }

@@ -22,6 +22,7 @@ export const environment = {
         endpoint: true
     },
     serverUrl: '',
+    apiUrl: 'http://localhost:3000',
     defaultLanguage: 'en-US',
     supportedLanguages: [
         'en-US',

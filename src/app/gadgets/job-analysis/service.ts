@@ -9,7 +9,7 @@ export class JobAnalysisService {
     }
 
     get() {
-        return this._http.get('../../plugins/procmon/components/gadgets/trend/model.json')
+        return this._http.get('../../plugins/procmon/components/gadgets/trend/model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

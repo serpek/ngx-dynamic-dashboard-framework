@@ -21,7 +21,7 @@ export class EndPointService {
                 const base: any = {endPoint: []};
                 const mockBarChart = new EndPoint(
                     'Chart Mock Bar Data Source',
-                    '/assets/api/chart-mock-bar-model.json',
+                    '///chart-mock-bar-model.json',
                     'test user',
                     'testCredential',
                     'unknown',
@@ -34,7 +34,7 @@ export class EndPointService {
                 base.endPoint.push(mockBarChart);
                 const mockPieChart = new EndPoint(
                     'Chart Mock Pie Data Source',
-                    '/assets/api/chart-mock-pie-model.json',
+                    '///chart-mock-pie-model.json',
                     'test user',
                     'testCredential',
                     'unknown',

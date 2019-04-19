@@ -12,7 +12,7 @@ export class StorageService {
     }
 
     get() {
-        return this._http.get('/assets/api/storage-model.json')
+        return this._http.get('storage-model')
             .pipe(
                 catchError(RuntimeService.handleError)
             );

@@ -1,3 +1,5 @@
+export {SharedModule} from '@app/shared/shared.module';
+
 export {BoardLayoutManagerComponent} from '@app/shared/layout/layout-component';
 export {LoaderComponent} from '@app/shared/loader/loader.component';
 export {TypeAheadInputComponent} from '@app/shared/typeahead-input/typeahead-input.component';
